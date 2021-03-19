@@ -11,8 +11,10 @@ namespace Web_Development
     /// </summary>
     public class Database : DbContext
     {
-        // TODO: Add more tables when more models are added
         public DbSet<User> Users { get; set; }
+        public DbSet<Record> Records { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Sale> Sales { get; set; }
 
         /// <summary>
         ///     Creates the database if it doesn't exist yet
@@ -52,6 +54,9 @@ namespace Web_Development
         {
             // Create tables
             modelBuilder.Entity<User>().ToTable("user");
+            modelBuilder.Entity<Record>().ToTable("record");
+            modelBuilder.Entity<Product>().ToTable("product");
+            modelBuilder.Entity<Sale>().ToTable("sale");
         }
     }
 }

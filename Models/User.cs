@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Web_Development.Models
 {
     /// <summary>
-    ///     Model used for storing user data in the database
+    ///     Model used for storing users in the database
     /// </summary>
     public class User
     {
