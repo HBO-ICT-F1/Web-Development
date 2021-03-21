@@ -47,7 +47,7 @@ namespace Web_Development
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // TODO: Set connect string
-            optionsBuilder.UseMySql("");
+            optionsBuilder.UseMySQL("");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
