@@ -41,7 +41,7 @@ namespace Web_Development.Models
         /// <summary>
         ///     User password hashed with BCrypt
         /// </summary>
-        [StringLength(255)] // TODO: Actual BCrypt hash length
+        [StringLength(60)]
         [DataType(DataType.Password)]
         [Required]
         public string Password { get; set; }
