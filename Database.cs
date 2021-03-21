@@ -53,10 +53,10 @@ namespace Web_Development
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Create tables
-            modelBuilder.Entity<User>().ToTable("user");
-            modelBuilder.Entity<Record>().ToTable("record");
-            modelBuilder.Entity<Product>().ToTable("product");
-            modelBuilder.Entity<Sale>().ToTable("sale");
+            modelBuilder.Entity<User>().ToTable("users");
+            modelBuilder.Entity<Record>().ToTable("records");
+            modelBuilder.Entity<Product>().ToTable("products");
+            modelBuilder.Entity<Sale>().ToTable("sales");
         }
     }
 }
