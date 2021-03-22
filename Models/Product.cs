@@ -36,5 +36,12 @@ namespace Web_Development.Models
         
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+
+
+        public Record getRecord()
+        {
+            
+            return null;
+        }
     }
 }

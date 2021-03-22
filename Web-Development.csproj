@@ -33,4 +33,10 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Pages\Index.cs">
+      <DependentUpon>Index.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
