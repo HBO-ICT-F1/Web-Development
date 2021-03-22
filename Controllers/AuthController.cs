@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Web_Development.Models;
 using static BCrypt.Net.BCrypt;
@@ -18,7 +19,25 @@ namespace Web_Development.Controllers
         {
             return View("Register");
         }
-        
+
+        [HttpPost("/login")]
+        public IActionResult Auth()
+        {
+            var valid = false;
+            var email = Request.Form["Email"];
+            var password = Request.Form["Password"];
+            using (var database = new Database())
+            {
+                var user = database.Users.FirstOrDefault(b => b.Email == email);
+                Console.WriteLine(user);
+                if (user?.Id != null)
+                {
+                    valid = EnhancedVerify(password, user.Password);
+                }
+            }
+            //TODO: Find better solution
+            return Redirect(valid ? "/" : "/login");
+        }
         
         [HttpPost("/register")]
         public IActionResult CreateUser()
@@ -46,6 +65,7 @@ namespace Web_Development.Controllers
                 database.Add(user);
                 database.SaveChanges();
             }
+            //TODO: Find better solution
             return Redirect("/login");
         }
     }
