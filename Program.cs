@@ -27,7 +27,8 @@ namespace Web_Development
             services.AddDbContext<Database>();
 
             // Add razor pages to project
-            services.AddRazorPages();
+            // services.AddRazorPages();
+            services.AddControllersWithViews();
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -47,10 +48,15 @@ namespace Web_Development
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
-
+            
             // Add endpoints
-            app.UseAuthorization();
-            app.UseEndpoints(endpoints => endpoints.MapRazorPages());
+            // app.UseAuthorization();
+            // app.UseEndpoints(endpoints => endpoints.MapRazorPages());
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
