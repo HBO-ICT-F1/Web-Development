@@ -5,9 +5,13 @@
 
 <div>
     <h1>Register</h1>
-    <h2>Register</h2>
-    <h3>Register</h3>
-    <h4>Register</h4>
-    <h5>Register</h5>
-    <h6>Register</h6>
+    <form method="post" action="@Url.Link("Register", null)">
+        <input type="text" name="Name" placeholder="Naam">
+        <input type="text" name="Email" placeholder="Email">
+        <input type="password" name="Password" placeholder="Wachtwoord">
+        <input type="text" name="Address" placeholder="Adres">
+        <input type="text" name="PostalCode" placeholder="Postcode"> 
+        <input type="text" name="Country" placeholder="Land">
+        <input type="submit" value="Aanmaken">
+    </form>
 </div>
