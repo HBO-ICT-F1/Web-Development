@@ -6,6 +6,10 @@
 <section class="auth-box">
     <span class="title">Login</span>
     <form method="post" action="@Url.Link("Login", null)">
+        @if (TempData["error"] != null)
+        {
+            <span class="error">@TempData["error"]</span>
+        }
         <input type="text" name="Email" placeholder="Email">
         <input type="password" name="Password" placeholder="Wachtwoord">
         <button type="submit">Inloggen</button>

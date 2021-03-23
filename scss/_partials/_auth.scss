@@ -17,6 +17,10 @@ section.auth-box {
     user-select: none;
   }
   
+  span.error {
+    color: red;
+  }
+    
   a {
     background: gray;
     color: white;

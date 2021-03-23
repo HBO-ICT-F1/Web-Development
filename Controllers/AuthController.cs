@@ -36,11 +36,10 @@ namespace Web_Development.Controllers
             var user = _database.Users.FirstOrDefault(b => b.Email == email);
             if (user == null || !EnhancedVerify(password, user.Password) )
             {
-                //TODO: Find better solution
-                return Redirect("/login");
+                TempData["error"] = "De ingevulde gegevens zijn niet bekend";
+                return RedirectToAction("Login");
             }
-            //TODO: Find better solution
-            return Redirect("/");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost("/register")]

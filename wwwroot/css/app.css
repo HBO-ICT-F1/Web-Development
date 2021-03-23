@@ -318,6 +318,9 @@ section.auth-box span {
   margin-bottom: 7px;
   user-select: none;
 }
+section.auth-box span.error {
+  color: red;
+}
 section.auth-box a {
   background: gray;
   color: white;
