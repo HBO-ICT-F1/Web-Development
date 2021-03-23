@@ -1,30 +1,40 @@
 section.header {
   min-height: 500px;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   padding: 15px;
-
-  .title {
-    font-size: 50px;
-    margin-bottom: 60px;
-  }
-
-  .description {
-    margin-bottom: 80px;
-    max-width: 430px;
-  }
-
-  .action {
-    border: 0;
-    background: #bdbdbd;
+  background: #f2f2f2 url("https://weraveyou.com/wp-content/uploads/2021/02/close-up-vinyl-record-on-player-BUYVINYL0420.jpg");
+  background-size: cover;
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0000004f;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
+    padding: 20px;
+    
+    .title {
+      font-size: 50px;
+      margin-bottom: 60px;
+    }
+
+    .description {
+      margin-bottom: 80px;
+      max-width: 430px;
+    }
+
+    .action {
+      border: 0;
+      background: #bdbdbd;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
   }
 }

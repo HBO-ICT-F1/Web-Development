@@ -71,23 +71,32 @@ nav.mobile.active .buttons a {
 
 section.header {
   min-height: 500px;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   padding: 15px;
+  background: #f2f2f2 url("https://weraveyou.com/wp-content/uploads/2021/02/close-up-vinyl-record-on-player-BUYVINYL0420.jpg");
+  background-size: cover;
 }
-section.header .title {
+section.header .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #0000004f;
+  color: white;
+  padding: 20px;
+}
+section.header .box .title {
   font-size: 50px;
   margin-bottom: 60px;
 }
-section.header .description {
+section.header .box .description {
   margin-bottom: 80px;
   max-width: 430px;
 }
-section.header .action {
+section.header .box .action {
   border: 0;
   background: #bdbdbd;
   color: white;
