@@ -8,6 +8,13 @@ namespace Web_Development.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly Database _database;
+
+        public AuthController(Database database)
+        {
+            _database = database;
+        }
+        
         [HttpGet("/login")]
         public IActionResult Login()
         {
@@ -23,18 +30,17 @@ namespace Web_Development.Controllers
         [HttpPost("/login")]
         public IActionResult Auth()
         {
-            var valid = false;
             var email = Request.Form["Email"];
             var password = Request.Form["Password"];
-            using (var database = new Database())
-            {
-                var user = database.Users.FirstOrDefault(b => b.Email == email);
-                Console.WriteLine(user);
-                if (user?.Id != null) valid = EnhancedVerify(password, user.Password);
-            }
 
+            var user = _database.Users.FirstOrDefault(b => b.Email == email);
+            if (user == null || !EnhancedVerify(password, user.Password) )
+            {
+                //TODO: Find better solution
+                return Redirect("/login");
+            }
             //TODO: Find better solution
-            return Redirect(valid ? "/" : "/login");
+            return Redirect("/");
         }
 
         [HttpPost("/register")]
@@ -47,23 +53,21 @@ namespace Web_Development.Controllers
             var postCode = Request.Form["PostalCode"];
             var country = Request.Form["Country"];
             var hash = EnhancedHashPassword(password);
-            using (var database = new Database())
+            //TODO: Add validator
+            var user = new User
             {
-                var user = new User
-                {
-                    Name = name,
-                    Email = email,
-                    Password = hash,
-                    Address = address,
-                    PostalCode = postCode,
-                    Country = country,
-                    Role = 0,
-                    CreatedAt = DateTime.Today
-                };
-                database.Add(user);
-                database.SaveChanges();
-            }
-
+                Name = name,
+                Email = email,
+                Password = hash,
+                Address = address,
+                PostalCode = postCode,
+                Country = country,
+                Role = 0,
+                CreatedAt = DateTime.Today
+            };
+            _database.Add(user);
+            _database.SaveChanges();
+            
             //TODO: Find better solution
             return Redirect("/login");
         }
