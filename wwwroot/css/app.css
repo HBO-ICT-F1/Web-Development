@@ -47,6 +47,13 @@ nav.navbar {
 }
 nav.navbar .title {
   margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+nav.navbar .title img {
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
 }
 nav.navbar .fas, nav.navbar .fa {
   display: none;
