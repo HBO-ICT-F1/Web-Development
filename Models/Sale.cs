@@ -9,23 +9,18 @@ namespace Web_Development.Models
     /// </summary>
     public class Sale
     {
-        [Key]
-        public long Id { get; set; }
-        
-        [Required]
-        public long ProductId { get; set; }
-        
-        [Required]
-        public long UserId { get; set; }
-        
+        [Key] public long Id { get; set; }
+
+        [Required] public long ProductId { get; set; }
+
+        [Required] public long UserId { get; set; }
+
         [DataType(DataType.DateTime)]
         [Required]
         public DateTime CreatedAt { get; set; }
-        
-        [ForeignKey("ProductId")]
-        public virtual Product Product { get; set; }
-        
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+
+        [ForeignKey("ProductId")] public virtual Product Product { get; set; }
+
+        [ForeignKey("UserId")] public virtual User User { get; set; }
     }
 }

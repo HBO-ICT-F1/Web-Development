@@ -13,7 +13,7 @@ namespace Web_Development.Controllers
         {
             return View("Login");
         }
-        
+
         [HttpGet("/register")]
         public IActionResult Register()
         {
@@ -30,15 +30,13 @@ namespace Web_Development.Controllers
             {
                 var user = database.Users.FirstOrDefault(b => b.Email == email);
                 Console.WriteLine(user);
-                if (user?.Id != null)
-                {
-                    valid = EnhancedVerify(password, user.Password);
-                }
+                if (user?.Id != null) valid = EnhancedVerify(password, user.Password);
             }
+
             //TODO: Find better solution
             return Redirect(valid ? "/" : "/login");
         }
-        
+
         [HttpPost("/register")]
         public IActionResult CreateUser()
         {
@@ -65,6 +63,7 @@ namespace Web_Development.Controllers
                 database.Add(user);
                 database.SaveChanges();
             }
+
             //TODO: Find better solution
             return Redirect("/login");
         }
