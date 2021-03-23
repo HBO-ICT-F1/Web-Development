@@ -1,21 +1,34 @@
 section.show-more {
   min-height: 400px;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
 
+  .image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("https://i.pinimg.com/originals/13/88/8e/13888e00e0fae2a586e9d410e0cabea3.jpg");
+    filter: blur(20px);
+    background-size: cover;
+  }
+  
   .title {
     font-size: 50px;
     margin-bottom: 60px;
+    color: white;
+    z-index: 1;
   }
 
   .description {
     margin-bottom: 80px;
     max-width: 430px;
+    color: white;
+    z-index: 1;
   }
 
   .action {
@@ -26,5 +39,6 @@ section.show-more {
     border-radius: 5px;
     cursor: pointer;
     font-size: 13px;
+    z-index: 1;
   }
 }

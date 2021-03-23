@@ -6,14 +6,32 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #d6d6d6;
+}
+
 a {
   color: initial;
   text-decoration: none;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+footer {
+  margin-top: 80px;
+}
+
+section.header,
+.card-items,
+section.show-more,
+section.auth-box,
+section.catalogue,
+nav.navbar,
+footer {
+  box-shadow: 5px 5px 10px 0 #0000001c;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f2f2f2;
 }
 
 .container {
@@ -27,6 +45,7 @@ body {
 @import "_partials/show-more";
 @import "_partials/footer";
 @import "_partials/auth";
+@import "_partials/pagination";
 
 @media only screen and (min-width: 576px) {
   .container {

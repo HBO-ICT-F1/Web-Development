@@ -1,0 +1,22 @@
+section.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  user-select: none;
+
+  .current, .next, .previous {
+    background: #c4c4c4;
+    height: 25px;
+    min-width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin: 0 6px;
+    padding: 5px;
+  }
+  
+  .next, .previous {
+    cursor: pointer;
+  }
+}

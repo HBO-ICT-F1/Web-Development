@@ -2,3 +2,27 @@
     Layout = "Layout";
     ViewData["Title"] = "Catalogue";
 }
+
+<section class="card-items">
+    <div class="cards">
+         @for (int i = 0; i < 50; i++)
+         {
+             <div class="record-card">
+                 <div class="record-header">
+                     <div class="play-btn"></div>
+                 </div>
+                 <a href="#">
+                     <div class="record-footer">
+                         <span class="record-title">Item Title</span>
+                         <span class="record-price">€99</span>
+                     </div>
+                 </a>
+             </div>
+         }
+    </div>
+</section>
+<section class="pagination">
+    <div class="previous"><i class="fas fa-arrow-left"></i></div>
+    <div class="current">1</div>
+    <div class="next"><i class="fas fa-arrow-right"></i></div>
+</section>

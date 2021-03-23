@@ -5,14 +5,32 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #d6d6d6;
+}
+
 a {
   color: initial;
   text-decoration: none;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+footer {
+  margin-top: 80px;
+}
+
+section.header,
+.card-items,
+section.show-more,
+section.auth-box,
+section.catalogue,
+nav.navbar,
+footer {
+  box-shadow: 5px 5px 10px 0 #0000001c;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f2f2f2;
 }
 
 .container {
@@ -23,16 +41,18 @@ body {
 nav.navbar {
   height: 50px;
   margin-bottom: 10px;
-  background: #f2f2f2;
   display: flex;
   align-items: center;
-  padding: 20px;
+  user-select: none;
 }
 nav.navbar .title {
   margin-right: auto;
 }
 nav.navbar .fas, nav.navbar .fa {
   display: none;
+}
+nav.navbar .buttons {
+  z-index: 2;
 }
 nav.navbar .buttons a {
   margin: 0 10px;
@@ -75,28 +95,31 @@ section.header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: #f2f2f2 url("https://weraveyou.com/wp-content/uploads/2021/02/close-up-vinyl-record-on-player-BUYVINYL0420.jpg");
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+section.header .image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("https://media.istockphoto.com/photos/vinyl-records-collection-picture-id1213228417?k=6&m=1213228417&s=612x612&w=0&h=6PWr2IgEKVQ-cJRkHrWpuuRyXlrQhF9JO7EtWYLKAJM=");
+  filter: blur(20px);
   background-size: cover;
 }
-section.header .box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #0000004f;
-  color: white;
-  padding: 20px;
-}
-section.header .box .title {
+section.header .title {
   font-size: 50px;
   margin-bottom: 60px;
+  color: white;
+  z-index: 1;
 }
-section.header .box .description {
+section.header .description {
   margin-bottom: 80px;
   max-width: 430px;
+  color: white;
+  z-index: 1;
 }
-section.header .box .action {
+section.header .action {
   border: 0;
   background: #bdbdbd;
   color: white;
@@ -104,14 +127,15 @@ section.header .box .action {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
+  z-index: 1;
 }
 
 .card-items {
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  padding: 0;
+  user-select: none;
 }
 .card-items .title {
   font-size: 50px;
@@ -154,6 +178,9 @@ section.header .box .action {
   font-size: 13px;
   color: #646464;
 }
+.card-items .cards .record-card:hover {
+  scale: 1.01;
+}
 
 @media only screen and (min-width: 576px) {
   .card-items .cards .record-card {
@@ -194,21 +221,33 @@ section.header .box .action {
 }
 section.show-more {
   min-height: 400px;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+section.show-more .image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url("https://i.pinimg.com/originals/13/88/8e/13888e00e0fae2a586e9d410e0cabea3.jpg");
+  filter: blur(20px);
+  background-size: cover;
 }
 section.show-more .title {
   font-size: 50px;
   margin-bottom: 60px;
+  color: white;
+  z-index: 1;
 }
 section.show-more .description {
   margin-bottom: 80px;
   max-width: 430px;
+  color: white;
+  z-index: 1;
 }
 section.show-more .action {
   border: 0;
@@ -218,6 +257,7 @@ section.show-more .action {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
+  z-index: 1;
 }
 
 footer {
@@ -252,21 +292,20 @@ footer .sitemaps .sitemap {
 
 section.auth-box {
   min-height: 300px;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
 }
 section.auth-box .title {
   font-size: 40px;
   margin-bottom: 25px;
+  user-select: none;
 }
 section.auth-box span {
   font-size: 13px;
   margin-bottom: 7px;
+  user-select: none;
 }
 section.auth-box a {
   background: gray;
@@ -274,6 +313,7 @@ section.auth-box a {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 13px;
+  user-select: none;
 }
 section.auth-box form {
   display: flex;
@@ -315,6 +355,27 @@ section.auth-box form .boxes .box:last-child {
 }
 section.auth-box form .boxes .box:first-child {
   margin: 0 15px 0 0;
+}
+
+section.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  user-select: none;
+}
+section.pagination .current, section.pagination .next, section.pagination .previous {
+  background: #c4c4c4;
+  height: 25px;
+  min-width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  margin: 0 6px;
+  padding: 5px;
+}
+section.pagination .next, section.pagination .previous {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 576px) {
