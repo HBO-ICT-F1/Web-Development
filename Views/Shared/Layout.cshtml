@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="~/css/app.css"/>
 </head>
 <body>
+@Html.Partial("_Navbar")
 <div class="container">
     @RenderBody()
+    @Html.Partial("_Footer")
 </div>
 
-@* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
 <script src="~/js/app.js" asp-append-version="true"></script>
 

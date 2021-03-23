@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -12,6 +13,57 @@ body {
 .container {
   margin: auto;
   padding: 10px;
+}
+
+nav.navbar {
+  height: 50px;
+  margin-bottom: 10px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+nav.navbar .title {
+  margin-right: auto;
+}
+nav.navbar .fas, nav.navbar .fa {
+  display: none;
+}
+nav.navbar .buttons a {
+  color: black;
+  margin: 0 10px;
+  text-decoration: none;
+  width: max-content;
+}
+nav.navbar .buttons a.btn {
+  color: white;
+  background: black;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+nav.mobile .fas, nav.mobile .fa {
+  display: block;
+}
+nav.mobile .buttons {
+  display: none;
+}
+
+nav.mobile.active .buttons {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  height: calc(100% - 50px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: #00000080;
+}
+nav.mobile.active .buttons a {
+  margin-bottom: 10px;
+  color: white;
 }
 
 section.header {
@@ -38,6 +90,7 @@ section.header .action {
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .card-items {
@@ -45,6 +98,7 @@ section.header .action {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
 }
 .card-items .title {
   font-size: 50px;
@@ -125,6 +179,64 @@ section.header .action {
     height: 214px;
   }
 }
+section.show-more {
+  min-height: 400px;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+section.show-more .title {
+  font-size: 50px;
+  margin-bottom: 60px;
+}
+section.show-more .description {
+  margin-bottom: 80px;
+  max-width: 430px;
+}
+section.show-more .action {
+  border: 0;
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+footer .line {
+  background: black;
+  height: 1px;
+  width: 100%;
+  box-shadow: 0 5px 3px 0 #c2c2c2;
+  margin: 10px 0 25px 0;
+}
+footer .title {
+  font-size: 18px;
+}
+footer .sitemaps {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .sitemaps .sitemap {
+  width: 50%;
+  text-align: center;
+  font-size: 15px;
+  color: black;
+}
+
 @media only screen and (min-width: 576px) {
   .container {
     width: 540px;

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 * {
   box-sizing: border-box;
@@ -15,8 +16,11 @@ body {
   padding: 10px;
 }
 
+@import "_partials/navbar";
 @import "_partials/title-header";
 @import "_partials/record-card";
+@import "_partials/show-more";
+@import "_partials/footer";
 
 @media only screen and (min-width: 576px) {
   .container {

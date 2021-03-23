@@ -1,5 +1,5 @@
-section.header {
-  min-height: 500px;
+section.show-more {
+  min-height: 400px;
   background: #f2f2f2;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ section.header {
 
   .action {
     border: 0;
-    background: #bdbdbd;
+    background: black;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
