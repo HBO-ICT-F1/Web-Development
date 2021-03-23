@@ -1,4 +1,5 @@
-﻿@{
+﻿@using Web_Development.Models
+@{
     Layout = "Layout";
     ViewData["Title"] = "Index";
 }
@@ -13,7 +14,7 @@
 <section class="card-items">
     <span class="title">Vinyl platen</span>
     <div class="cards">
-        @for (int i = 0; i < 5; i++)
+        @foreach (Product product in ViewBag.products)
         {
             <div class="record-card">
                 <div class="record-header">

@@ -15,8 +15,9 @@ namespace Web_Development.Controllers
         [HttpGet("/catalogue")]
         public IActionResult Index()
         {
-            ViewBag.products = _database.Products.Include(p => p.Record);
-            return View();
+            ViewBag.products = _database.Products
+                .Include(p => p.Record);
+            return View("Index");
         }
     }
 }
