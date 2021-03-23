@@ -181,6 +181,10 @@ section.header .action {
   background: #a1a1a1;
   padding: 10px;
 }
+.card-items .cards .record-card .record-footer .record-artist {
+  font-size: 12px;
+  color: #646464;
+}
 .card-items .cards .record-card .record-footer .record-price {
   font-size: 13px;
   color: #646464;

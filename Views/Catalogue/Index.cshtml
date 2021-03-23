@@ -1,3 +1,4 @@
+@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Catalogue";
@@ -5,7 +6,7 @@
 
 <section class="card-items">
     <div class="cards">
-         @for (int i = 0; i < 50; i++)
+         @foreach (Product product in ViewBag.products)
          {
              <div class="record-card">
                  <div class="record-header">
@@ -13,8 +14,9 @@
                  </div>
                  <a href="#">
                      <div class="record-footer">
-                         <span class="record-title">Item Title</span>
-                         <span class="record-price">€99</span>
+                         <span class="record-title">@product.Record.Title</span>
+                         <span class="record-artist">@product.Record.Artist</span>
+                         <span class="record-price">€@product.Price</span>
                      </div>
                  </a>
              </div>
