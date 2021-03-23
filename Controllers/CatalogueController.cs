@@ -1,8 +1,5 @@
-using System;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Web_Development.Models;
 
 namespace Web_Development.Controllers
 {
