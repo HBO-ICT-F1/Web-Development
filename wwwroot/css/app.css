@@ -5,6 +5,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  color: initial;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -30,9 +35,7 @@ nav.navbar .fas, nav.navbar .fa {
   display: none;
 }
 nav.navbar .buttons a {
-  color: black;
   margin: 0 10px;
-  text-decoration: none;
   width: max-content;
 }
 nav.navbar .buttons a.btn {
@@ -91,6 +94,7 @@ section.header .action {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .card-items {
@@ -204,6 +208,7 @@ section.show-more .action {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 footer {
@@ -234,7 +239,73 @@ footer .sitemaps .sitemap {
   width: 50%;
   text-align: center;
   font-size: 15px;
-  color: black;
+}
+
+section.auth-box {
+  min-height: 300px;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+section.auth-box .title {
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+section.auth-box span {
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+section.auth-box a {
+  background: gray;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+section.auth-box form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+section.auth-box form input[type=text], section.auth-box form input[type=password] {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+section.auth-box form button {
+  background: black;
+  color: white;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+section.auth-box form button.gray {
+  background: gray;
+}
+section.auth-box form .boxes {
+  display: flex;
+  max-width: 500px;
+}
+section.auth-box form .boxes .box {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 15px;
+}
+section.auth-box form .boxes .box:last-child {
+  margin: 0 0 0 15px;
+}
+section.auth-box form .boxes .box:first-child {
+  margin: 0 15px 0 0;
 }
 
 @media only screen and (min-width: 576px) {

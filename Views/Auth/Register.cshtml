@@ -3,15 +3,23 @@
     ViewData["Title"] = "Register";
 }
 
-<div>
-    <h1>Register</h1>
+<section class="auth-box">
+    <span class="title">Register</span>
     <form method="post" action="@Url.Link("Register", null)">
-        <input type="text" name="Name" placeholder="Naam">
-        <input type="text" name="Email" placeholder="Email">
-        <input type="password" name="Password" placeholder="Wachtwoord">
-        <input type="text" name="Address" placeholder="Adres">
-        <input type="text" name="PostalCode" placeholder="Postcode">
-        <input type="text" name="Country" placeholder="Land">
-        <input type="submit" value="Aanmaken">
+        <section class="boxes">
+            <div class="box">
+                <input type="text" name="Name" placeholder="Naam">
+                <input type="text" name="Email" placeholder="Email">
+                <input type="password" name="Password" placeholder="Wachtwoord">
+            </div>
+            <div class="box">
+                <input type="text" name="Address" placeholder="Adres">
+                <input type="text" name="PostalCode" placeholder="Postcode">
+                <input type="text" name="Country" placeholder="Land">
+            </div>
+        </section>
+        <button type="submit">Aanmaken</button>
     </form>
-</div>
+    <span>Heb je al een account?</span>
+    <a href="/login">Login</a>
+</section>

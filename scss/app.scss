@@ -6,6 +6,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  color: initial;
+  text-decoration: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -21,6 +26,7 @@ body {
 @import "_partials/record-card";
 @import "_partials/show-more";
 @import "_partials/footer";
+@import "_partials/auth";
 
 @media only screen and (min-width: 576px) {
   .container {

@@ -3,11 +3,13 @@
     ViewData["Title"] = "Login";
 }
 
-<div>
-    <h1>Login</h1>
+<section class="auth-box">
+    <span class="title">Login</span>
     <form method="post" action="@Url.Link("Login", null)">
         <input type="text" name="Email" placeholder="Email">
         <input type="password" name="Password" placeholder="Wachtwoord">
-        <input type="submit" value="Inloggen">
+        <button type="submit">Inloggen</button>
     </form>
-</div>
+    <span>Nog geen account?</span>
+    <a href="/register">Registreren</a>
+</section>
