@@ -1,0 +1,33 @@
+@using Web_Development.Models
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "Product";
+}
+
+@if (ViewBag.product != null)
+{
+    <section class="product">
+        <table>
+            <tr>
+                <th>Prijs</th>
+                <th>€@Html.ViewBag.product.Price</th>
+            </tr>
+            <tr>
+                <th>Te koop</th>
+                <th>@Html.ViewBag.product.ForSale</th>
+            </tr>
+            <tr>
+                <th>Vinyl kwaliteit</th>
+                <th>@Html.ViewBag.product.PlateCondition</th>
+            </tr>
+            <tr>
+                <th>Sleeve kwaliteit</th>
+                <th>@Html.ViewBag.product.SleeveCondition</th>
+            </tr>
+            <tr>
+                <th>Toegevoegd op</th>
+                <th>@Html.ViewBag.product.CreatedAt</th>
+            </tr>
+        </table>
+    </section>
+}

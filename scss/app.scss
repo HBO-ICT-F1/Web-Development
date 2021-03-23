@@ -26,6 +26,7 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
+section.product,
 nav.navbar,
 footer {
   box-shadow: 5px 5px 10px 0 #0000001c;
@@ -45,6 +46,7 @@ footer {
 @import "_partials/show-more";
 @import "_partials/footer";
 @import "_partials/auth";
+@import "_partials/product";
 @import "_partials/pagination";
 
 @media only screen and (min-width: 576px) {
