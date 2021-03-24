@@ -1,0 +1,20 @@
+@model Web_Development.Models.Product
+<div class="record-card">
+    <a href="/product/@Model.Id">
+        @{
+            var youtubeUrl = "";
+            if (!string.IsNullOrEmpty(@Model.Record.YoutubeToken))
+            {
+                youtubeUrl = $"https://img.youtube.com/vi/{@Model.Record.YoutubeToken}/0.jpg";
+            }
+        }
+        <div class="record-header" style="background-image: url(@youtubeUrl)">
+            <div class="play-btn"></div>
+        </div>
+        <div class="record-footer">
+            <span class="record-title">@Model.Record.Title</span>
+            <span class="record-artist">@Model.Record.Artist</span>
+            <span class="record-price">€@Model.Price</span>
+        </div>
+    </a>
+</div>

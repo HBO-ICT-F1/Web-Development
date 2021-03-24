@@ -2,32 +2,74 @@
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
+    if (ViewBag.product != null)
+    {
+        ViewData["Title"] = $"{ViewBag.product.Record.Title} - {ViewBag.product.Record.Artist}";
+    }
 }
 
 @if (ViewBag.product != null)
 {
     <section class="product">
-        <table>
-            <tr>
-                <th>Prijs</th>
-                <th>€@Html.ViewBag.product.Price</th>
-            </tr>
-            <tr>
-                <th>Te koop</th>
-                <th>@Html.ViewBag.product.ForSale</th>
-            </tr>
-            <tr>
-                <th>Vinyl kwaliteit</th>
-                <th>@Html.ViewBag.product.PlateCondition</th>
-            </tr>
-            <tr>
-                <th>Sleeve kwaliteit</th>
-                <th>@Html.ViewBag.product.SleeveCondition</th>
-            </tr>
-            <tr>
-                <th>Toegevoegd op</th>
-                <th>@Html.ViewBag.product.CreatedAt</th>
-            </tr>
-        </table>
+        <div class="title">@Html.ViewBag.product.Record.Title</div>
+        <div class="flex-row">
+            @if (!string.IsNullOrEmpty(ViewBag.product.Record.YoutubeToken))
+            {
+                <div class="product-header">
+                    <iframe src="https://www.youtube.com/embed/@Html.ViewBag.product.Record.YoutubeToken" title="@Html.ViewBag.product.Record.Title - @Html.ViewBag.product.Record.Artist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            }
+            <div class="information">
+                <table>
+                    <tr class="row">
+                        <th>Prijs</th>
+                        <td>€@Html.ViewBag.product.Price</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Artiest</th>
+                        <td>@Html.ViewBag.product.Record.Artist</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Jaar</th>
+                        <td>@Html.ViewBag.product.Record.Year</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Vinyl kwaliteit</th>
+                        <td>@Html.ViewBag.product.PlateCondition</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Sleeve kwaliteit</th>
+                        <td>@Html.ViewBag.product.SleeveCondition</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Catalogus nummer</th>
+                        <td>@Html.ViewBag.product.Record.CatalogNumber</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Aangeboden door</th>
+                        <td>@Html.ViewBag.product.User.Name</td>
+                    </tr>
+                    <tr class="row">
+                        <th>Aangeboden op</th>
+                        <td>@Html.ViewBag.product.CreatedAt</td>
+                    </tr>
+                </table>
+                <a href="#" class="purchase">kopen</a>
+            </div>
+        </div>
+        @if (!string.IsNullOrEmpty(ViewBag.product.Record.YoutubeToken))
+        {
+            <div class="image-cards">
+                @{
+                    for (int i = 0; i < 4; i++)
+                    {
+                        var url = $"https://img.youtube.com/vi/{ViewBag.product.Record.YoutubeToken}/{i}.jpg";
+                        <div class="image-card">
+                            <div class="image" style="background-image: url(@url)"></div>
+                        </div>
+                    }
+                }
+            </div>
+        }
     </section>
 }

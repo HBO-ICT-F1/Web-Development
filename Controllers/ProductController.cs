@@ -19,6 +19,7 @@ namespace Web_Development.Controllers
         {
             ViewBag.product = _database.Products
                 .Include(p => p.Record)
+                .Include(p => p.User)
                 .FirstOrDefault(b => b.Id == ProductId);
             return View("Index");
         }
