@@ -27,7 +27,7 @@ section.auth-box,
 section.catalogue,
 section .image-cards,
 nav.navbar,
-section.product .flex-row .information,
+section.product .flex-row .information .record-box,
 section.product .flex-row .product-header,
 footer {
   box-shadow: 5px 5px 10px 0 #0000001c;
@@ -176,7 +176,7 @@ section.header .action-box .action {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover;
+  background-size: cover !important;
 }
 .card-items .cards .record-card .record-header .play-btn {
   box-sizing: border-box;
@@ -435,20 +435,23 @@ section.product .flex-row .product-header iframe {
   border: 0;
 }
 section.product .flex-row .information {
+  width: 100%;
+  min-width: 350px;
+  height: 300px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+section.product .flex-row .information .record-box {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  min-width: 350px;
-  height: max-content;
 }
-section.product .flex-row .information table {
-  margin-bottom: 20px;
-}
-section.product .flex-row .information table .row {
+section.product .flex-row .information .record-box table .row {
   text-align: left;
 }
-section.product .flex-row .information .purchase {
+section.product .flex-row .information .record-box .purchase {
+  margin-top: 20px;
   color: white;
   background: black;
   padding: 5px 15px;
@@ -458,7 +461,7 @@ section.product .flex-row .information .purchase {
   section.product .title {
     color: white;
   }
-  section.product .flex-row .information table {
+  section.product .flex-row .information .record-box table {
     color: white;
   }
 }
@@ -514,7 +517,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 992px) {
-  section.product .flex-row .product-header {
+  section.product .flex-row .product-header, section.product .flex-row .information {
     height: 350px;
   }
   section.product .image-cards .image-card {
@@ -523,7 +526,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.product .flex-row .product-header {
+  section.product .flex-row .product-header, section.product .flex-row .information {
     height: 450px;
   }
   section.product .image-cards .image-card {
@@ -532,7 +535,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.product .flex-row .product-header {
+  section.product .flex-row .product-header, section.product .flex-row .information {
     height: 500px;
   }
   section.product .image-cards .image-card {
@@ -582,7 +585,7 @@ section.auth-box,
 section.catalogue,
 section .image-cards,
 nav.navbar,
-section.product .flex-row .information,
+section.product .flex-row .information .record-box,
 section.product .flex-row .product-header,
 footer {
     box-shadow: 5px 5px 10px 0 #00000063;

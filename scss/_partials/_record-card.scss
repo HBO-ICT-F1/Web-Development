@@ -27,7 +27,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-size: cover;
+        background-size: cover !important;
 
         .play-btn {
           box-sizing: border-box;
