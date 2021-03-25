@@ -17,6 +17,7 @@ namespace Web_Development.Utils
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             ViewBag.auth = _auth;
+            ViewBag.user = _auth.User();
             base.OnActionExecuting(filterContext);
         }
     }

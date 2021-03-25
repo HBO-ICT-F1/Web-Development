@@ -17,8 +17,7 @@ namespace Web_Development.Middleware.Auth
         {
             if (new Utils.Auth(context.Response).User() == null)
             {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("access denied");
+                context.Response.Redirect("/");
                 return;
             }
             await _next.Invoke(context);
