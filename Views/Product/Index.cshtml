@@ -20,31 +20,33 @@
                 </div>
             }
             <div class="information">
-                <table>
+     
                     @foreach (var product in ViewBag.products)
                     {
-                        <tr class="row">
-                            <th>Prijs</th>
-                            <td>€@product.Price</td>
-                        </tr>
-                        <tr class="row">
-                            <th>Vinyl kwaliteit</th>
-                            <td>@product.PlateCondition</td>
-                        </tr>
-                        <tr class="row">
-                            <th>Sleeve kwaliteit</th>
-                            <td>@product.SleeveCondition</td>
-                        </tr>
-                        <tr class="row">
-                            <th>Aangeboden door</th>
-                            <td>@product.User.Name</td>
-                        </tr>
-                        <tr class="row">
-                            <th>Aangeboden op</th>
-                            <td>@product.CreatedAt</td>
-                        </tr>
+                        <table>
+                            <tr class="row">
+                                <th>Prijs</th>
+                                <td>€@product.Price</td>
+                            </tr>
+                            <tr class="row">
+                                <th>Vinyl kwaliteit</th>
+                                <td>@product.PlateCondition</td>
+                            </tr>
+                            <tr class="row">
+                                <th>Sleeve kwaliteit</th>
+                                <td>@product.SleeveCondition</td>
+                            </tr>
+                            <tr class="row">
+                                <th>Aangeboden door</th>
+                                <td>@product.User.Name</td>
+                            </tr>
+                            <tr class="row">
+                                <th>Aangeboden op</th>
+                                <td>@product.CreatedAt</td>
+                            </tr>
+                        </table>
                     }
-                </table>
+       
             </div>
         </div>
         @if (!string.IsNullOrEmpty(ViewBag.record.YoutubeToken))
