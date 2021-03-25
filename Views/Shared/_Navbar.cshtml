@@ -1,3 +1,6 @@
+@{
+    var user = ViewBag.auth.User();
+}
 <nav class="navbar">
     <a class="title" href="/">
         <img class="logo" src="~/img/logo.png">
@@ -6,7 +9,14 @@
     <i class="fas fa-bars navbar-toggle"></i>
     <section class="buttons">
         <a href="/catalogue">Catelogus</a>
-        <a class="btn" href="/register">Aanmelden</a>
-        <a class="btn" href="/login">Login</a>
+        @if (user == null)
+        {
+            <a class="btn" href="/register">Aanmelden</a>
+            <a class="btn" href="/login">Login</a>
+        }
+        else
+        {
+            <a class="btn" href="/logout">Afmelden</a>
+        }
     </section>
 </nav>

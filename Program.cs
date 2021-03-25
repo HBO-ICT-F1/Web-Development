@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 
 namespace Web_Development
@@ -29,6 +31,8 @@ namespace Web_Development
             // Add razor pages to project
             // services.AddRazorPages();
             services.AddControllersWithViews();
+            
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)

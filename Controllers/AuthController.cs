@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Web_Development.Models;
 using Web_Development.Utils;
@@ -7,15 +8,14 @@ using static BCrypt.Net.BCrypt;
 
 namespace Web_Development.Controllers
 {
-    public class AuthController : Controller
+    public class AuthController : BaseController
     {
         private readonly Database _database;
-        private readonly Auth _auth;
 
-        public AuthController(Database database)
+        public AuthController(Database database, IHttpContextAccessor httpContextAccessor)
+            : base(httpContextAccessor)
         {
             _database = database;
-            _auth = new Auth();
         }
         
         [HttpGet("/login")]
@@ -39,11 +39,18 @@ namespace Web_Development.Controllers
             var user = _database.Users.FirstOrDefault(b => b.Email == email);
             if (user != null && EnhancedVerify(password, user.Password))
             {
-                _auth.Login(Response, user);
+                _auth.Login(user);
                 return RedirectToAction("Index", "Home");
             }
             TempData["error"] = "De ingevulde gegevens zijn niet bekend";
             return RedirectToAction("Login");
+        }
+        
+        [HttpGet("/logout")]
+        public IActionResult Logout()
+        {
+            _auth.Logout();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost("/register")]
