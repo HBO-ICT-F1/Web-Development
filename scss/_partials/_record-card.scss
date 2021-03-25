@@ -62,6 +62,25 @@
       scale: 1.01;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    .title {
+      color: white;
+    }
+
+    .cards {
+      .record-card {
+        .record-header {
+          background: #393939;
+        }
+        
+        .record-footer {
+          background: #1c1c1c;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 576px) {

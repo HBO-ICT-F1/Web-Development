@@ -59,10 +59,18 @@ nav.mobile.active {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    background: #a9a9a9;
+    background: #00000094;
 
     a {
       margin-bottom: 10px;
+      color: white;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  nav.navbar {
+    .title, .buttons a, .fas, .fa {
       color: white;
     }
   }

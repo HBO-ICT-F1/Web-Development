@@ -6,6 +6,7 @@ section.pagination {
 
   .current, .next, .previous {
     background: #c4c4c4;
+    box-shadow: 5px 5px 10px 0 #0000001c;
     height: 25px;
     min-width: 25px;
     display: flex;
@@ -18,5 +19,13 @@ section.pagination {
   
   .next, .previous {
     cursor: pointer;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .current, .next, .previous {
+      box-shadow: 5px 5px 10px 0 #00000063;
+      background: #2d2d2d;
+      color: white;
+    }
   }
 }
