@@ -2,6 +2,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web_Development.Models;
 using Web_Development.Utils;
 
 namespace Web_Development.Controllers
@@ -22,7 +23,8 @@ namespace Web_Development.Controllers
             ViewBag.record = _database.Records.FirstOrDefault(record => record.Id == recordId);
             ViewBag.products = _database.Products
                 .Include(product => product.User)
-                .Where(product => product.ForSale && product.RecordId == recordId);
+                .Where(product => product.ForSale && product.RecordId == recordId)
+                .OrderBy(product => product.Price );
             return View("Index");
         }
     }

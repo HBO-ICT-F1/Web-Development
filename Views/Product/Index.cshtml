@@ -1,4 +1,3 @@
-@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
@@ -20,33 +19,31 @@
                 </div>
             }
             <div class="information">
-     
-                    @foreach (var product in ViewBag.products)
-                    {
-                        <table>
-                            <tr class="row">
-                                <th>Prijs</th>
-                                <td>€@product.Price</td>
-                            </tr>
-                            <tr class="row">
-                                <th>Vinyl kwaliteit</th>
-                                <td>@product.PlateCondition</td>
-                            </tr>
-                            <tr class="row">
-                                <th>Sleeve kwaliteit</th>
-                                <td>@product.SleeveCondition</td>
-                            </tr>
-                            <tr class="row">
-                                <th>Aangeboden door</th>
-                                <td>@product.User.Name</td>
-                            </tr>
-                            <tr class="row">
-                                <th>Aangeboden op</th>
-                                <td>@product.CreatedAt</td>
-                            </tr>
-                        </table>
-                    }
-       
+                @foreach (var product in ViewBag.products)
+                {
+                    <table>
+                        <tr class="row">
+                            <th>Prijs</th>
+                            <td>€@product.Price</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Vinyl kwaliteit</th>
+                            <td>@product.PlateCondition</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Sleeve kwaliteit</th>
+                            <td>@product.SleeveCondition</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Aangeboden door</th>
+                            <td>@product.User.Name</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Aangeboden op</th>
+                            <td>@product.CreatedAt</td>
+                        </tr>
+                    </table>
+                }
             </div>
         </div>
         @if (!string.IsNullOrEmpty(ViewBag.record.YoutubeToken))
