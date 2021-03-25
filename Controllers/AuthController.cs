@@ -36,10 +36,10 @@ namespace Web_Development.Controllers
             var email = Request.Form["Email"];
             var password = Request.Form["Password"];
 
-            var user = _database.Users.FirstOrDefault(b => b.Email == email);
-            if (user != null && EnhancedVerify(password, user.Password))
+            var foundUser = _database.Users.FirstOrDefault(user => user.Email == email);
+            if (foundUser != null && EnhancedVerify(password, foundUser.Password))
             {
-                _auth.Login(user);
+                _auth.Login(foundUser);
                 return RedirectToAction("Index", "Home");
             }
             TempData["error"] = "De ingevulde gegevens zijn niet bekend";

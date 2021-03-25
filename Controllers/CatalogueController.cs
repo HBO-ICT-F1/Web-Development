@@ -19,8 +19,7 @@ namespace Web_Development.Controllers
         [HttpGet("/catalogue"), MiddlewareFilter(typeof(AuthMiddlewareConfig))]
         public IActionResult Index()
         {
-            ViewBag.products = _database.Products
-                .Include(p => p.Record);
+            ViewBag.records = _database.Records;
             return View("Index", _auth);
         }
     }

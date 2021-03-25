@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,14 +15,14 @@ namespace Web_Development.Controllers
         {
             _database = database;
         }
-        
-        [HttpGet("/product/{ProductId}")]
-        public IActionResult Index(int ProductId)
+
+        [HttpGet("/record/{RecordId}")]
+        public IActionResult Index(int recordId)
         {
-            ViewBag.product = _database.Products
-                .Include(p => p.Record)
-                .Include(p => p.User)
-                .FirstOrDefault(b => b.Id == ProductId);
+            ViewBag.record = _database.Records.FirstOrDefault(record => record.Id == recordId);
+            ViewBag.products = _database.Products
+                .Include(product => product.User)
+                .Where(product => product.ForSale && product.RecordId == recordId);
             return View("Index");
         }
     }

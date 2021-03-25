@@ -2,68 +2,58 @@
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
-    if (ViewBag.product != null)
+    if (ViewBag.record != null)
     {
-        ViewData["Title"] = $"{ViewBag.product.Record.Title} - {ViewBag.product.Record.Artist}";
+        ViewData["Title"] = $"{ViewBag.record.Title} - {ViewBag.Record.Artist}";
     }
 }
 
-@if (ViewBag.product != null)
+@if (ViewBag.record != null)
 {
     <section class="product">
-        <div class="title">@Html.ViewBag.product.Record.Title</div>
+        <div class="title">@Html.ViewBag.record.Title</div>
         <div class="flex-row">
-            @if (!string.IsNullOrEmpty(ViewBag.product.Record.YoutubeToken))
+            @if (!string.IsNullOrEmpty(ViewBag.Record.YoutubeToken))
             {
                 <div class="product-header">
-                    <iframe src="https://www.youtube.com/embed/@Html.ViewBag.product.Record.YoutubeToken" title="@Html.ViewBag.product.Record.Title - @Html.ViewBag.product.Record.Artist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/@Html.ViewBag.record.YoutubeToken" title="@Html.ViewBag.record.Title - @Html.ViewBag.record.Artist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             }
             <div class="information">
                 <table>
-                    <tr class="row">
-                        <th>Prijs</th>
-                        <td>€@Html.ViewBag.product.Price</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Artiest</th>
-                        <td>@Html.ViewBag.product.Record.Artist</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Jaar</th>
-                        <td>@Html.ViewBag.product.Record.Year</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Vinyl kwaliteit</th>
-                        <td>@Html.ViewBag.product.PlateCondition</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Sleeve kwaliteit</th>
-                        <td>@Html.ViewBag.product.SleeveCondition</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Catalogus nummer</th>
-                        <td>@Html.ViewBag.product.Record.CatalogNumber</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Aangeboden door</th>
-                        <td>@Html.ViewBag.product.User.Name</td>
-                    </tr>
-                    <tr class="row">
-                        <th>Aangeboden op</th>
-                        <td>@Html.ViewBag.product.CreatedAt</td>
-                    </tr>
+                    @foreach (var product in ViewBag.products)
+                    {
+                        <tr class="row">
+                            <th>Prijs</th>
+                            <td>€@product.Price</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Vinyl kwaliteit</th>
+                            <td>@product.PlateCondition</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Sleeve kwaliteit</th>
+                            <td>@product.SleeveCondition</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Aangeboden door</th>
+                            <td>@product.User.Name</td>
+                        </tr>
+                        <tr class="row">
+                            <th>Aangeboden op</th>
+                            <td>@product.CreatedAt</td>
+                        </tr>
+                    }
                 </table>
-                <a href="#" class="purchase">kopen</a>
             </div>
         </div>
-        @if (!string.IsNullOrEmpty(ViewBag.product.Record.YoutubeToken))
+        @if (!string.IsNullOrEmpty(ViewBag.record.YoutubeToken))
         {
             <div class="image-cards">
                 @{
-                    for (int i = 0; i < 4; i++)
+                    for (var i = 0; i < 4; i++)
                     {
-                        var url = $"https://img.youtube.com/vi/{ViewBag.product.Record.YoutubeToken}/{i}.jpg";
+                        var url = $"https://img.youtube.com/vi/{ViewBag.record.YoutubeToken}/{i}.jpg";
                         <div class="image-card">
                             <div class="image" style="background-image: url(@url)"></div>
                         </div>

@@ -20,8 +20,7 @@ namespace Web_Development.Controllers
         [HttpGet("/")]
         public IActionResult Index()
         {
-            ViewBag.products = _database.Products
-                .Include(p => p.Record)
+            ViewBag.records = _database.Records
                 .OrderByDescending(p => p.Id)
                 .Take(5);
             return View("Index");

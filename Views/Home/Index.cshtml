@@ -26,9 +26,9 @@
 <section class="card-items">
     <span class="title">Vinyl platen</span>
     <div class="cards">
-        @foreach (Product product in ViewBag.products)
+        @foreach (Record record in ViewBag.records)
         {
-            @Html.Partial("_RecordCard", product)
+            @await Html.PartialAsync("_RecordCard", record)
         }
     </div>
 </section>
