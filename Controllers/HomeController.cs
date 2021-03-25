@@ -21,7 +21,7 @@ namespace Web_Development.Controllers
         public IActionResult Index()
         {
             ViewBag.records = _database.Records
-                .OrderByDescending(p => p.Id)
+                .OrderByDescending(record => record.Id)
                 .Take(5);
             return View("Index");
         }
