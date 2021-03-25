@@ -129,7 +129,10 @@ section.header .description {
   color: white;
   z-index: 1;
 }
-section.header .action {
+section.header .action-box {
+  z-index: 1;
+}
+section.header .action-box .action {
   border: 0;
   background: #bdbdbd;
   color: white;
@@ -137,7 +140,6 @@ section.header .action {
   border-radius: 5px;
   cursor: pointer;
   font-size: 13px;
-  z-index: 1;
 }
 
 .card-items {

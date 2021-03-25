@@ -8,7 +8,19 @@
     <div class="image"></div>
     <span class="title">Rolink Records</span>
     <div class="description">Ben u opzoek naar een webshop waar u uw vinyl collectie mee kunt vergroten, dan is <strong>Rolink Records</strong> de webshop voor u.</div>
-    <a class="action" href="/catalogue">Bekijk de catelogus</a>
+    @if (ViewBag.user == null)
+    {
+        <div class="action-box">
+            <a class="action" href="/register">Account aanmaken</a>
+            <a class="action" href="/login">Inloggen</a>
+        </div>
+    }
+    else
+    {
+        <div class="action-box">
+            <a class="action" href="/catalogue">Bekijk de catelogus</a>
+        </div>
+    }
 </section>
 
 <section class="card-items">

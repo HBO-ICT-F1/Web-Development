@@ -31,14 +31,17 @@ section.header {
     z-index: 1;
   }
 
-  .action {
-    border: 0;
-    background: #bdbdbd;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
+  .action-box {
     z-index: 1;
+    
+    .action {
+      border: 0;
+      background: #bdbdbd;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
   }
 }
