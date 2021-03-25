@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Web_Development.Models
 @{
     Layout = "Layout";
@@ -26,7 +27,7 @@
                         <table>
                             <tr class="row">
                                 <th>Prijs</th>
-                                <td>€@product.Price</td>
+                                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
                             </tr>
                             <tr class="row">
                                 <th>Vinyl kwaliteit</th>
