@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Web_Development.Middleware.Auth;
 using Web_Development.Utils;
 
 namespace Web_Development.Controllers
@@ -15,7 +16,7 @@ namespace Web_Development.Controllers
             _database = database;
         }
 
-        [HttpGet("/catalogue")]
+        [HttpGet("/catalogue"), MiddlewareFilter(typeof(AuthMiddlewareConfig))]
         public IActionResult Index()
         {
             ViewBag.products = _database.Products
