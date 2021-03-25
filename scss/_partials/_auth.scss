@@ -4,23 +4,23 @@ section.auth-box {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   .title {
     font-size: 40px;
     margin-bottom: 25px;
     user-select: none;
   }
-  
+
   span {
     font-size: 13px;
     margin-bottom: 7px;
     user-select: none;
   }
-  
+
   span.error {
     color: red;
   }
-    
+
   a {
     background: gray;
     color: white;
@@ -29,7 +29,7 @@ section.auth-box {
     font-size: 13px;
     user-select: none;
   }
-  
+
   form {
     display: flex;
     align-items: center;
@@ -42,7 +42,7 @@ section.auth-box {
       padding: 10px 20px;
       border-radius: 5px;
     }
-    
+
     button {
       background: black;
       color: white;
@@ -53,15 +53,15 @@ section.auth-box {
       margin-top: 20px;
       margin-bottom: 15px;
     }
-    
+
     button.gray {
       background: gray;
     }
-    
+
     .boxes {
       display: flex;
       max-width: 500px;
-      
+
       .box {
         display: flex;
         flex-direction: column;
@@ -76,6 +76,17 @@ section.auth-box {
       .box:first-child {
         margin: 0 15px 0 0;
       }
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .title, span {
+      color: white;
+    }
+
+    input[type=text], input[type=password] {
+      background: #1c1c1c;
+      color: white;
     }
   }
 }

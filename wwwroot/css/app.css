@@ -405,6 +405,15 @@ section.auth-box form .boxes .box:last-child {
 section.auth-box form .boxes .box:first-child {
   margin: 0 15px 0 0;
 }
+@media (prefers-color-scheme: dark) {
+  section.auth-box .title, section.auth-box span {
+    color: white;
+  }
+  section.auth-box input[type=text], section.auth-box input[type=password] {
+    background: #1c1c1c;
+    color: white;
+  }
+}
 
 section.product {
   box-shadow: none;
