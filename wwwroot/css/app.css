@@ -595,6 +595,10 @@ section.pagination .next, section.pagination .previous {
   flex-direction: column;
   align-items: center;
 }
+.account section.change-password form span.error {
+  margin-bottom: 8px;
+  color: red;
+}
 .account section.change-password form .input-box {
   display: flex;
   flex-direction: column;

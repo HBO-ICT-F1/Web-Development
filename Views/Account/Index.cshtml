@@ -1,3 +1,5 @@
+@using System.Globalization
+@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Account";
@@ -11,10 +13,13 @@
                 <th>Prijs</th>
         </thead>
         <tbody>
-            <tr>
-                <td>test title</td>
-                <td>test prijs</td>
-            </tr>
+             @foreach (Product product in ViewBag.purchasableProducts)
+             {
+                 <tr>
+                     <td>@product.Record.Title</td>
+                     <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+                 </tr>
+             }
         </tbody>
     </table>
 </section>
@@ -26,10 +31,13 @@
                 <th>Prijs</th>
         </thead>
         <tbody>
-            <tr>
-                <td>test title</td>
-                <td>test prijs</td>
-            </tr>
+             @foreach (Product product in ViewBag.soldProducts)
+             {
+                 <tr>
+                     <td>@product.Record.Title</td>
+                     <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+                 </tr>
+             }
         </tbody>
     </table>
 </section>
@@ -62,12 +70,16 @@
     </section>
     <section class="change-password">
         <div class="title">Wachwoord wijzigen</div>
-        <form>
+        <form method="post" action="@Url.Action("PasswordChange")">
+            @if (TempData["error_password"] != null)
+            {
+                <span class="error">@TempData["error_password"]</span>
+            }
             <div class="input-box">
-                <input type="password" placeholder="Wachtwoord">
-                <input type="password" placeholder="Nieuw wachtwoord">
+                <input type="password" name="Password" required placeholder="Wachtwoord">
+                <input type="password" name="NewPassword" required placeholder="Nieuw wachtwoord">
             </div>
-            <button>Wachtwoord wijzigen</button>
+            <button type="submit">Wachtwoord wijzigen</button>
         </form>
     </section>
 </section>

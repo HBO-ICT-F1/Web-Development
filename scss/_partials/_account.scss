@@ -21,6 +21,11 @@
       flex-direction: column;
       align-items: center;
       
+      span.error {
+        margin-bottom: 8px;
+        color: red;
+      }
+      
       .input-box {
         display: flex;
         flex-direction: column;
