@@ -1,0 +1,147 @@
+.account {
+  section.user-details {
+    margin-right: 20px;
+    width: 100%;
+    
+    table {
+      width: 100%;
+      
+      tr th {
+        text-align: left;
+        user-select: none;
+      }
+    }
+  }
+
+  section.change-password {
+    width: 100%;
+    
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      span.error {
+        margin-bottom: 8px;
+        color: red;
+      }
+      
+      .input-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+      }
+
+      button {
+        background: black;
+        color: white;
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  section.user-details,
+  section.change-password {
+    .title {
+      font-size: 25px;
+      margin-bottom: 15px;
+      text-align: center;
+      user-select: none;
+    }
+  }
+}
+
+section.purchasable-records,
+section.sold-records {
+  .title {
+    font-size: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    user-select: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      tr {
+        background: #d6d6d6;
+
+        th {
+          text-align: left;
+          user-select: none;
+        }
+      }
+    }
+
+    th, td {
+      padding: 5px;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .account {
+    section.user-details {
+      table {
+        color: white;
+      }
+    }
+    
+    section.user-details,
+    section.change-password {
+      .title {
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+
+  section.purchasable-records,
+  section.sold-records {
+    .title {
+      color: white;
+    }
+
+    table {
+      color: white;
+
+      thead tr {
+        background: #484848;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .account {
+    display: flex;
+    
+    section.change-password {
+      form {
+        .input-box {
+          flex-direction: row;
+
+          input {
+            margin-right: 15px;
+          }
+
+          input:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

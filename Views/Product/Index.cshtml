@@ -1,5 +1,4 @@
 @using System.Globalization
-@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
@@ -20,7 +19,7 @@
                     <iframe src="https://www.youtube.com/embed/@Html.ViewBag.record.YoutubeToken" title="@Html.ViewBag.record.Title - @Html.ViewBag.record.Artist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             }
-            <div class="information">
+            <div class="records">
                 @foreach (var product in ViewBag.products)
                 {
                     <div class="record-box">
@@ -46,7 +45,7 @@
                                 <td>@product.CreatedAt</td>
                             </tr>
                         </table>
-                        @if (@ViewBag.user != null)
+                        @if (ViewBag.user != null)
                         {
                             <a href="#" class="purchase">kopen</a>
                         }
@@ -68,5 +67,26 @@
                 }
             </div>
         }
+        <div class="information">
+            <div class="title">Informatie</div>
+            <table>
+                <tr class="row">
+                    <th>Titel</th>
+                    <td>@Html.ViewBag.record.Title</td>
+                </tr>
+                <tr class="row">
+                    <th>Artiest</th>
+                    <td>@Html.ViewBag.record.Artist</td>
+                </tr>
+                <tr class="row">
+                    <th>Jaar</th>
+                    <td>@Html.ViewBag.record.Year</td>
+                </tr>
+                <tr class="row">
+                    <th>Catalogus nummer</th>
+                    <td>@Html.ViewBag.record.CatalogNumber</td>
+                </tr>
+            </table>
+        </div>
     </section>
 }

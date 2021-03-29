@@ -26,10 +26,15 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
-section .image-cards,
+section.product .image-cards,
 nav.navbar,
-section.product .flex-row .information .record-box,
+section.product .information,
+section.product .flex-row .records .record-box,
 section.product .flex-row .product-header,
+section.user-details,
+section.change-password,
+section.purchasable-records,
+section.sold-records,
 footer {
   box-shadow: 5px 5px 10px 0 #0000001c;
   margin-bottom: 20px;
@@ -50,6 +55,14 @@ footer {
 @import "_partials/auth";
 @import "_partials/product";
 @import "_partials/pagination";
+@import "_partials/account";
+
+input[type=text], input[type=password] {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -61,13 +74,23 @@ footer {
   section.show-more,
   section.auth-box,
   section.catalogue,
-  section .image-cards,
+  section.product .image-cards,
   nav.navbar,
-  section.product .flex-row .information .record-box,
+  section.product .information,
+  section.product .flex-row .records .record-box,
   section.product .flex-row .product-header,
+  section.user-details,
+  section.change-password,
+  section.purchasable-records,
+  section.sold-records,
   footer {
     box-shadow: 5px 5px 10px 0 #00000063;
     background: #2d2d2d;
+  }
+
+  input[type=text], input[type=password] {
+    background: #1c1c1c;
+    color: white;
   }
 }
 

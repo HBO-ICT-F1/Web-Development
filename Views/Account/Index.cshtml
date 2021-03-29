@@ -1,4 +1,85 @@
+@using System.Globalization
+@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Account";
 }
+
+<section class="purchasable-records">
+    <div class="title">Platen</div>
+    <table>
+        <thead>
+        <th>Title</th>
+        <th>Prijs</th>
+        </thead>
+        <tbody>
+        @foreach (Product product in ViewBag.purchasableProducts)
+        {
+            <tr>
+                <td>@product.Record.Title</td>
+                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</section>
+<section class="sold-records">
+    <div class="title">Verkochte platen</div>
+    <table>
+        <thead>
+        <th>Title</th>
+        <th>Prijs</th>
+        </thead>
+        <tbody>
+        @foreach (Product product in ViewBag.soldProducts)
+        {
+            <tr>
+                <td>@product.Record.Title</td>
+                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</section>
+
+<section class="account">
+    <section class="user-details">
+        <div class="title">Gebruiker gegevens</div>
+        <table>
+            <tr>
+                <th>Naam:</th>
+                <td>@ViewBag.user.Name</td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>@ViewBag.user.Email</td>
+            </tr>
+            <tr>
+                <th>Adres:</th>
+                <td>@ViewBag.user.Address</td>
+            </tr>
+            <tr>
+                <th>Postcode:</th>
+                <td>@ViewBag.user.PostalCode</td>
+            </tr>
+            <tr>
+                <th>Land:</th>
+                <td>@ViewBag.user.Country</td>
+            </tr>
+        </table>
+    </section>
+    <section class="change-password">
+        <div class="title">Wachwoord wijzigen</div>
+        <form method="post" action="@Url.Action("PasswordChange")">
+            @if (TempData["error_password"] != null)
+            {
+                <span class="error">@TempData["error_password"]</span>
+            }
+            <div class="input-box">
+                <input type="password" name="Password" required placeholder="Wachtwoord">
+                <input type="password" name="NewPassword" required placeholder="Nieuw wachtwoord">
+            </div>
+            <button type="submit">Wachtwoord wijzigen</button>
+        </form>
+    </section>
+</section>

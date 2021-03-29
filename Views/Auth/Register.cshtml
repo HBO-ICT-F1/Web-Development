@@ -5,21 +5,21 @@
 
 <section class="auth-box">
     <span class="title">Aanmelden</span>
-    <form method="post" action="@Url.Link("Register", null)">
+    <form method="post" action="@Url.Action("Register")">
         <section class="boxes">
             <div class="box">
-                <input type="text" name="Name" placeholder="Naam">
-                <input type="text" name="Email" placeholder="Email">
-                <input type="password" name="Password" placeholder="Wachtwoord">
+                <input required type="text" name="Name" placeholder="Naam">
+                <input required type="text" name="Email" placeholder="Email">
+                <input required type="password" name="Password" placeholder="Wachtwoord">
             </div>
             <div class="box">
-                <input type="text" name="Address" placeholder="Adres">
-                <input type="text" name="PostalCode" placeholder="Postcode">
-                <input type="text" name="Country" placeholder="Land">
+                <input required type="text" name="Address" placeholder="Adres">
+                <input required type="text" name="PostalCode" placeholder="Postcode">
+                <input required type="text" name="Country" placeholder="Land">
             </div>
         </section>
         <button type="submit">Aanmelden</button>
     </form>
     <span>Heb je al een account?</span>
-    <a href="/login">Login</a>
+    <a href="@Url.Action("Login")">Login</a>
 </section>

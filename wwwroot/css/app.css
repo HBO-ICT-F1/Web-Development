@@ -25,10 +25,15 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
-section .image-cards,
+section.product .image-cards,
 nav.navbar,
-section.product .flex-row .information .record-box,
+section.product .information,
+section.product .flex-row .records .record-box,
 section.product .flex-row .product-header,
+section.user-details,
+section.change-password,
+section.purchasable-records,
+section.sold-records,
 footer {
   box-shadow: 5px 5px 10px 0 #0000001c;
   margin-bottom: 20px;
@@ -370,12 +375,6 @@ section.auth-box form {
   flex-direction: column;
   width: 100%;
 }
-section.auth-box form input[type=text], section.auth-box form input[type=password] {
-  border: 1px solid black;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
 section.auth-box form button {
   background: black;
   color: white;
@@ -409,10 +408,6 @@ section.auth-box form .boxes .box:first-child {
   section.auth-box .title, section.auth-box span {
     color: white;
   }
-  section.auth-box input[type=text], section.auth-box input[type=password] {
-    background: #1c1c1c;
-    color: white;
-  }
 }
 
 section.product {
@@ -443,23 +438,23 @@ section.product .flex-row .product-header iframe {
   width: 100%;
   border: 0;
 }
-section.product .flex-row .information {
+section.product .flex-row .records {
   width: 100%;
   min-width: 350px;
   height: 300px;
   overflow-x: auto;
   margin-bottom: 20px;
 }
-section.product .flex-row .information .record-box {
+section.product .flex-row .records .record-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-section.product .flex-row .information .record-box table .row {
+section.product .flex-row .records .record-box table .row {
   text-align: left;
 }
-section.product .flex-row .information .record-box .purchase {
+section.product .flex-row .records .record-box .purchase {
   margin-top: 20px;
   color: white;
   background: black;
@@ -470,7 +465,10 @@ section.product .flex-row .information .record-box .purchase {
   section.product .title {
     color: white;
   }
-  section.product .flex-row .information .record-box table {
+  section.product .flex-row .records .record-box table {
+    color: white;
+  }
+  section.product .information {
     color: white;
   }
 }
@@ -488,6 +486,15 @@ section.product .image-cards .image-card .image {
   height: 100%;
   width: 100%;
   background-size: cover;
+}
+section.product .information .title {
+  font-size: 25px;
+}
+section.product .information table {
+  width: 100%;
+}
+section.product .information table th {
+  text-align: left;
 }
 @media only screen and (min-width: 480px) {
   section.product .flex-row .product-header {
@@ -514,7 +521,7 @@ section.product .image-cards .image-card .image {
   section.product .flex-row {
     flex-direction: row;
   }
-  section.product .flex-row .information {
+  section.product .flex-row .records {
     width: max-content;
   }
   section.product .flex-row .product-header {
@@ -526,7 +533,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 992px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 350px;
   }
   section.product .image-cards .image-card {
@@ -535,7 +542,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 450px;
   }
   section.product .image-cards .image-card {
@@ -544,7 +551,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 500px;
   }
   section.product .image-cards .image-card {
@@ -582,6 +589,127 @@ section.pagination .next, section.pagination .previous {
   }
 }
 
+.account section.user-details {
+  margin-right: 20px;
+  width: 100%;
+}
+.account section.user-details table {
+  width: 100%;
+}
+.account section.user-details table tr th {
+  text-align: left;
+  user-select: none;
+}
+.account section.change-password {
+  width: 100%;
+}
+.account section.change-password form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.account section.change-password form span.error {
+  margin-bottom: 8px;
+  color: red;
+}
+.account section.change-password form .input-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.account section.change-password form .input-box input {
+  width: 100%;
+}
+.account section.change-password form button {
+  background: black;
+  color: white;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.account section.user-details .title,
+.account section.change-password .title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  user-select: none;
+}
+
+section.purchasable-records .title,
+section.sold-records .title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  user-select: none;
+}
+section.purchasable-records table,
+section.sold-records table {
+  width: 100%;
+  border-collapse: collapse;
+}
+section.purchasable-records table thead tr,
+section.sold-records table thead tr {
+  background: #d6d6d6;
+}
+section.purchasable-records table thead tr th,
+section.sold-records table thead tr th {
+  text-align: left;
+  user-select: none;
+}
+section.purchasable-records table th, section.purchasable-records table td,
+section.sold-records table th,
+section.sold-records table td {
+  padding: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .account section.user-details table {
+    color: white;
+  }
+  .account section.user-details .title,
+.account section.change-password .title {
+    color: white;
+    text-align: center;
+  }
+
+  section.purchasable-records .title,
+section.sold-records .title {
+    color: white;
+  }
+  section.purchasable-records table,
+section.sold-records table {
+    color: white;
+  }
+  section.purchasable-records table thead tr,
+section.sold-records table thead tr {
+    background: #484848;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .account {
+    display: flex;
+  }
+  .account section.change-password form .input-box {
+    flex-direction: row;
+  }
+  .account section.change-password form .input-box input {
+    margin-right: 15px;
+  }
+  .account section.change-password form .input-box input:last-child {
+    margin-right: 0;
+  }
+}
+input[type=text], input[type=password] {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #1c1c1c;
@@ -592,13 +720,23 @@ section.pagination .next, section.pagination .previous {
 section.show-more,
 section.auth-box,
 section.catalogue,
-section .image-cards,
+section.product .image-cards,
 nav.navbar,
-section.product .flex-row .information .record-box,
+section.product .information,
+section.product .flex-row .records .record-box,
 section.product .flex-row .product-header,
+section.user-details,
+section.change-password,
+section.purchasable-records,
+section.sold-records,
 footer {
     box-shadow: 5px 5px 10px 0 #00000063;
     background: #2d2d2d;
+  }
+
+  input[type=text], input[type=password] {
+    background: #1c1c1c;
+    color: white;
   }
 }
 @media only screen and (min-width: 576px) {

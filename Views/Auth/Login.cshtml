@@ -5,15 +5,15 @@
 
 <section class="auth-box">
     <span class="title">Login</span>
-    <form method="post" action="@Url.Link("Login", null)">
+    <form method="post" action="@Url.Action("Login")">
         @if (TempData["error"] != null)
         {
             <span class="error">@TempData["error"]</span>
         }
-        <input type="text" name="Email" placeholder="Email">
-        <input type="password" name="Password" placeholder="Wachtwoord">
+        <input required type="text" name="Email" placeholder="Email">
+        <input required type="password" name="Password" placeholder="Wachtwoord">
         <button type="submit">Inloggen</button>
     </form>
     <span>Nog geen account?</span>
-    <a href="/register">Registreren</a>
+    <a href="@Url.Action("Register")">Registreren</a>
 </section>

@@ -1,11 +1,11 @@
 @model Web_Development.Models.Record
 <div class="record-card">
-    <a href="/record/@Model.Id">
+    <a href="@Url.Action("Index", "Product", new {RecordId = Model.Id})">
         @{
             var youtubeUrl = "";
-            if (!string.IsNullOrEmpty(@Model.YoutubeToken))
+            if (!string.IsNullOrEmpty(Model.YoutubeToken))
             {
-                youtubeUrl = $"https://img.youtube.com/vi/{@Model.YoutubeToken}/0.jpg";
+                youtubeUrl = $"https://img.youtube.com/vi/{Model.YoutubeToken}/0.jpg";
             }
         }
         <div class="record-header" style="background-image: url(@youtubeUrl)">
