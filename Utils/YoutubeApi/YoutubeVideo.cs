@@ -1,4 +1,6 @@
-﻿namespace Web_Development.Utils.YoutubeApi
+﻿using System.Collections.Generic;
+
+namespace Web_Development.Utils.YoutubeApi
 {
     public class YoutubeVideo
     {
@@ -29,6 +31,16 @@
             return "https://www.youtube.com/watch?v=" + VideoId;
         }
 
+        public List<string> GetImages()
+        {
+            return new List<string>()
+            {
+                $"https://img.youtube.com/vi/{VideoId}/0.jpg",
+                $"https://img.youtube.com/vi/{VideoId}/1.jpg",
+                $"https://img.youtube.com/vi/{VideoId}/2.jpg",
+                $"https://img.youtube.com/vi/{VideoId}/3.jpg"
+            };
+        }
         
         
     }
