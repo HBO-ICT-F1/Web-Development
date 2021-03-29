@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <a class="title" href="/">
+    <a class="title" href="@Url.Action("Index", "Home")">
         <img class="logo" src="~/img/logo.png">
         <span>Rolink Records</span>
     </a>
@@ -7,14 +7,14 @@
     <section class="buttons">
         @if (ViewBag.user == null)
         {
-            <a class="btn" href="/register">Aanmelden</a>
-            <a class="btn" href="/login">Login</a>
+            <a class="btn" href="@Url.Action("Register", "Auth")">Aanmelden</a>
+            <a class="btn" href="@Url.Action("Login", "Auth")">Login</a>
         }
         else
         {
-            <a href="/catalogue">Catelogus</a>
-            <a href="/account">Account</a>
-            <a class="btn" href="/logout">Afmelden</a>
+            <a href="@Url.Action("Index", "Catalogue")">Catelogus</a>
+            <a href="@Url.Action("Index", "Account")">Account</a>
+            <a class="btn" href="@Url.Action("Logout", "Auth")">Afmelden</a>
         }
     </section>
 </nav>

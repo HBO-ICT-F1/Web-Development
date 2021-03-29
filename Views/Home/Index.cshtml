@@ -11,14 +11,14 @@
     @if (ViewBag.user == null)
     {
         <div class="action-box">
-            <a class="action" href="/register">Account aanmaken</a>
-            <a class="action" href="/login">Inloggen</a>
+            <a class="action" href="@Url.Action("Register", "Auth")">Account aanmaken</a>
+            <a class="action" href="@Url.Action("Login", "Auth")">Inloggen</a>
         </div>
     }
     else
     {
         <div class="action-box">
-            <a class="action" href="/catalogue">Bekijk de catelogus</a>
+            <a class="action" href="@Url.Action("Index", "Catalogue")">Bekijk de catelogus</a>
         </div>
     }
 </section>
@@ -37,5 +37,12 @@
     <div class="image"></div>
     <span class="title">Meer zien?</span>
     <div class="description">U kunt onze volledige collectie bekijken, het enige dat u hoeft te doen is het aanmaken van een account. Maak uw account vandaag nog aan.</div>
-    <a class="action" href="/register">Account aanmaken</a>
+    @if (ViewBag.user == null)
+    {
+        <a class="action" href="@Url.Action("Register", "Auth")">Account aanmaken</a>
+    }
+    else
+    {
+        <a class="action" href="@Url.Action("Index", "Catalogue")">Bekijk de catelogus</a>
+    }
 </section>

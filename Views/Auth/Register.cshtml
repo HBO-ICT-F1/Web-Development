@@ -5,7 +5,7 @@
 
 <section class="auth-box">
     <span class="title">Aanmelden</span>
-    <form method="post" action="@Url.Link("Register", null)">
+    <form method="post" action="@Url.Action("Register")">
         <section class="boxes">
             <div class="box">
                 <input required type="text" name="Name" placeholder="Naam">
@@ -21,5 +21,5 @@
         <button type="submit">Aanmelden</button>
     </form>
     <span>Heb je al een account?</span>
-    <a href="/login">Login</a>
+    <a href="@Url.Action("Login")">Login</a>
 </section>
