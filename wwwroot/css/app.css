@@ -29,6 +29,10 @@ section .image-cards,
 nav.navbar,
 section.product .flex-row .information .record-box,
 section.product .flex-row .product-header,
+section.user-details,
+section.change-password,
+section.purchasable-records,
+section.sold-records,
 footer {
   box-shadow: 5px 5px 10px 0 #0000001c;
   margin-bottom: 20px;
@@ -370,12 +374,6 @@ section.auth-box form {
   flex-direction: column;
   width: 100%;
 }
-section.auth-box form input[type=text], section.auth-box form input[type=password] {
-  border: 1px solid black;
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
 section.auth-box form button {
   background: black;
   color: white;
@@ -407,10 +405,6 @@ section.auth-box form .boxes .box:first-child {
 }
 @media (prefers-color-scheme: dark) {
   section.auth-box .title, section.auth-box span {
-    color: white;
-  }
-  section.auth-box input[type=text], section.auth-box input[type=password] {
-    background: #1c1c1c;
     color: white;
   }
 }
@@ -582,6 +576,119 @@ section.pagination .next, section.pagination .previous {
   }
 }
 
+.account section.user-details {
+  margin-right: 20px;
+  width: 100%;
+}
+.account section.user-details table {
+  width: 100%;
+}
+.account section.user-details table tr th {
+  text-align: left;
+}
+.account section.change-password {
+  width: 100%;
+}
+.account section.change-password form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.account section.change-password form .input-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.account section.change-password form .input-box input {
+  width: 100%;
+}
+.account section.change-password form button {
+  background: black;
+  color: white;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.account section.user-details .title,
+.account section.change-password .title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+section.purchasable-records .title,
+section.sold-records .title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+section.purchasable-records table,
+section.sold-records table {
+  width: 100%;
+  border-collapse: collapse;
+}
+section.purchasable-records table thead tr,
+section.sold-records table thead tr {
+  background: #d6d6d6;
+}
+section.purchasable-records table thead tr th,
+section.sold-records table thead tr th {
+  text-align: left;
+}
+section.purchasable-records table th, section.purchasable-records table td,
+section.sold-records table th,
+section.sold-records table td {
+  padding: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .account section.user-details table {
+    color: white;
+  }
+  .account section.user-details .title,
+.account section.change-password .title {
+    color: white;
+    text-align: center;
+  }
+
+  section.purchasable-records .title,
+section.sold-records .title {
+    color: white;
+  }
+  section.purchasable-records table,
+section.sold-records table {
+    color: white;
+  }
+  section.purchasable-records table thead tr,
+section.sold-records table thead tr {
+    background: #484848;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .account {
+    display: flex;
+  }
+  .account section.change-password form .input-box {
+    flex-direction: row;
+  }
+  .account section.change-password form .input-box input {
+    margin-right: 15px;
+  }
+  .account section.change-password form .input-box input:last-child {
+    margin-right: 0;
+  }
+}
+input[type=text], input[type=password] {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #1c1c1c;
@@ -596,9 +703,18 @@ section .image-cards,
 nav.navbar,
 section.product .flex-row .information .record-box,
 section.product .flex-row .product-header,
+section.user-details,
+section.change-password,
+section.purchasable-records,
+section.sold-records,
 footer {
     box-shadow: 5px 5px 10px 0 #00000063;
     background: #2d2d2d;
+  }
+
+  input[type=text], input[type=password] {
+    background: #1c1c1c;
+    color: white;
   }
 }
 @media only screen and (min-width: 576px) {
