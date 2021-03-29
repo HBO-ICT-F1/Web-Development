@@ -7,19 +7,19 @@ namespace Web_Development.Utils
 {
     public class BaseController : Controller
     {
-        private readonly Auth _auth;
-        private readonly User _user;
+        protected readonly Auth auth;
+        protected readonly User user;
 
         public BaseController(IHttpContextAccessor httpContextAccessor)
         {
-            _auth = new Auth(httpContextAccessor.HttpContext?.Response);
-            _user = _auth.User();
+            auth = new Auth(httpContextAccessor.HttpContext?.Response);
+            user = auth.User();
         }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            ViewBag.auth = _auth;
-            ViewBag.user = _user;
+            ViewBag.auth = auth;
+            ViewBag.user = user;
             base.OnActionExecuting(filterContext);
         }
     }

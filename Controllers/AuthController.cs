@@ -17,7 +17,7 @@ namespace Web_Development.Controllers
         {
             _database = database;
         }
-        
+
         [HttpGet("/login")]
         public IActionResult Login()
         {
@@ -39,17 +39,18 @@ namespace Web_Development.Controllers
             var foundUser = _database.Users.FirstOrDefault(user => user.Email == email);
             if (foundUser != null && EnhancedVerify(password, foundUser.Password))
             {
-                _auth.Login(foundUser);
+                auth.Login(foundUser);
                 return RedirectToAction("Index", "Home");
             }
+
             TempData["error"] = "De ingevulde gegevens zijn niet bekend";
             return RedirectToAction("Login");
         }
-        
+
         [HttpGet("/logout")]
         public IActionResult Logout()
         {
-            _auth.Logout();
+            auth.Logout();
             return RedirectToAction("Index", "Home");
         }
 
@@ -77,7 +78,7 @@ namespace Web_Development.Controllers
             };
             _database.Add(user);
             _database.SaveChanges();
-            
+
             //TODO: Find better solution
             return Redirect("/login");
         }

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Web_Development.Middleware.Auth;
 using Web_Development.Utils;
 
@@ -16,11 +15,12 @@ namespace Web_Development.Controllers
             _database = database;
         }
 
-        [HttpGet("/catalogue"), MiddlewareFilter(typeof(AuthMiddlewareConfig))]
+        [HttpGet("/catalogue")]
+        [MiddlewareFilter(typeof(AuthMiddlewareConfig))]
         public IActionResult Index()
         {
             ViewBag.records = _database.Records;
-            return View("Index", _auth);
+            return View("Index", auth);
         }
     }
 }
