@@ -598,6 +598,7 @@ section.pagination .next, section.pagination .previous {
 }
 .account section.user-details table tr th {
   text-align: left;
+  user-select: none;
 }
 .account section.change-password {
   width: 100%;
@@ -635,6 +636,7 @@ section.pagination .next, section.pagination .previous {
   font-size: 25px;
   margin-bottom: 15px;
   text-align: center;
+  user-select: none;
 }
 
 section.purchasable-records .title,
@@ -642,6 +644,7 @@ section.sold-records .title {
   font-size: 25px;
   margin-bottom: 15px;
   text-align: center;
+  user-select: none;
 }
 section.purchasable-records table,
 section.sold-records table {
@@ -655,6 +658,7 @@ section.sold-records table thead tr {
 section.purchasable-records table thead tr th,
 section.sold-records table thead tr th {
   text-align: left;
+  user-select: none;
 }
 section.purchasable-records table th, section.purchasable-records table td,
 section.sold-records table th,
