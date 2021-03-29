@@ -25,9 +25,10 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
-section .image-cards,
+section.product .image-cards,
 nav.navbar,
-section.product .flex-row .information .record-box,
+section.product .information,
+section.product .flex-row .records .record-box,
 section.product .flex-row .product-header,
 section.user-details,
 section.change-password,
@@ -437,23 +438,23 @@ section.product .flex-row .product-header iframe {
   width: 100%;
   border: 0;
 }
-section.product .flex-row .information {
+section.product .flex-row .records {
   width: 100%;
   min-width: 350px;
   height: 300px;
   overflow-x: auto;
   margin-bottom: 20px;
 }
-section.product .flex-row .information .record-box {
+section.product .flex-row .records .record-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-section.product .flex-row .information .record-box table .row {
+section.product .flex-row .records .record-box table .row {
   text-align: left;
 }
-section.product .flex-row .information .record-box .purchase {
+section.product .flex-row .records .record-box .purchase {
   margin-top: 20px;
   color: white;
   background: black;
@@ -464,7 +465,10 @@ section.product .flex-row .information .record-box .purchase {
   section.product .title {
     color: white;
   }
-  section.product .flex-row .information .record-box table {
+  section.product .flex-row .records .record-box table {
+    color: white;
+  }
+  section.product .information {
     color: white;
   }
 }
@@ -482,6 +486,15 @@ section.product .image-cards .image-card .image {
   height: 100%;
   width: 100%;
   background-size: cover;
+}
+section.product .information .title {
+  font-size: 25px;
+}
+section.product .information table {
+  width: 100%;
+}
+section.product .information table th {
+  text-align: left;
 }
 @media only screen and (min-width: 480px) {
   section.product .flex-row .product-header {
@@ -508,7 +521,7 @@ section.product .image-cards .image-card .image {
   section.product .flex-row {
     flex-direction: row;
   }
-  section.product .flex-row .information {
+  section.product .flex-row .records {
     width: max-content;
   }
   section.product .flex-row .product-header {
@@ -520,7 +533,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 992px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 350px;
   }
   section.product .image-cards .image-card {
@@ -529,7 +542,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 450px;
   }
   section.product .image-cards .image-card {
@@ -538,7 +551,7 @@ section.product .image-cards .image-card .image {
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.product .flex-row .product-header, section.product .flex-row .information {
+  section.product .flex-row .product-header, section.product .flex-row .records {
     height: 500px;
   }
   section.product .image-cards .image-card {
@@ -703,9 +716,10 @@ input[type=text], input[type=password] {
 section.show-more,
 section.auth-box,
 section.catalogue,
-section .image-cards,
+section.product .image-cards,
 nav.navbar,
-section.product .flex-row .information .record-box,
+section.product .information,
+section.product .flex-row .records .record-box,
 section.product .flex-row .product-header,
 section.user-details,
 section.change-password,

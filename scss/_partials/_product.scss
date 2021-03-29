@@ -10,12 +10,12 @@ section.product {
     font-weight: bold;
     margin-bottom: 15px;
   }
-  
+
   .flex-row {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     .product-header {
       padding: 0;
       margin-right: 20px;
@@ -29,7 +29,7 @@ section.product {
       }
     }
 
-    .information {
+    .records {
       width: 100%;
       min-width: 350px;
       height: 300px;
@@ -41,9 +41,8 @@ section.product {
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        table {
 
+        table {
           .row {
             text-align: left;
           }
@@ -65,7 +64,7 @@ section.product {
       color: white;
     }
     .flex-row {
-      .information {
+      .records {
         .record-box {
           table {
             color: white;
@@ -73,22 +72,40 @@ section.product {
         }
       }
     }
+    
+    .information {
+      color: white;
+    }
   }
-  
+
   .image-cards {
     display: flex;
     flex-direction: column;
     padding: 0;
-    
+
     .image-card {
       height: 270px;
       width: 100%;
       padding: 20px;
-      
+
       .image {
         height: 100%;
         width: 100%;
-        background-size: cover;        
+        background-size: cover;
+      }
+    }
+  }
+
+  .information {
+    .title {
+      font-size: 25px;
+    }
+
+    table {
+      width: 100%;
+
+      th {
+        text-align: left;
       }
     }
   }
@@ -129,10 +146,10 @@ section.product {
     .flex-row {
       flex-direction: row;
 
-      .information {
-          width: max-content;
+      .records {
+        width: max-content;
       }
-      
+
       .product-header {
         height: 250px;
       }
@@ -148,7 +165,7 @@ section.product {
 
   @media only screen and (min-width: 992px) {
     .flex-row {
-      .product-header, .information {
+      .product-header, .records {
         height: 350px;
       }
     }
@@ -163,7 +180,7 @@ section.product {
 
   @media only screen and (min-width: 1200px) {
     .flex-row {
-      .product-header, .information {
+      .product-header, .records {
         height: 450px;
       }
     }
@@ -178,7 +195,7 @@ section.product {
 
   @media only screen and (min-width: 1400px) {
     .flex-row {
-      .product-header, .information {
+      .product-header, .records {
         height: 500px;
       }
     }
