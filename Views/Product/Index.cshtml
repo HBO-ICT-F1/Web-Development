@@ -1,5 +1,4 @@
 @using System.Globalization
-@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
@@ -46,7 +45,7 @@
                                 <td>@product.CreatedAt</td>
                             </tr>
                         </table>
-                        @if (@ViewBag.user != null)
+                        @if (ViewBag.user != null)
                         {
                             <a href="#" class="purchase">kopen</a>
                         }
@@ -68,5 +67,26 @@
                 }
             </div>
         }
+        <div>
+            <div>Informatie</div>
+            <table>
+                <tr class="row">
+                    <td>Titel</td>
+                    <td>@Html.ViewBag.record.Title</td>
+                </tr>
+                <tr class="row">
+                    <td>Artiest</td>
+                    <td>@Html.ViewBag.record.Artist</td>
+                </tr>
+                <tr class="row">
+                    <td>Jaar</td>
+                    <td>@Html.ViewBag.record.Year</td>
+                </tr>
+                <tr class="row">
+                    <td>Catalogus nummer</td>
+                    <td>@Html.ViewBag.record.CatalogNumber</td>
+                </tr>
+            </table>
+        </div>
     </section>
 }
