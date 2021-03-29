@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -8,8 +7,8 @@ namespace Web_Development.Utils
 {
     public class BaseController : Controller
     {
-        public Auth _auth;
-        public User _user;
+        private readonly Auth _auth;
+        private readonly User _user;
 
         public BaseController(IHttpContextAccessor httpContextAccessor)
         {

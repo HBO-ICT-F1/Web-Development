@@ -31,7 +31,7 @@ namespace Web_Development
             // Add razor pages to project
             // services.AddRazorPages();
             services.AddControllersWithViews();
-            
+
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
@@ -57,7 +57,7 @@ namespace Web_Development
             // app.UseAuthorization();
             // app.UseEndpoints(endpoints => endpoints.MapRazorPages());
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

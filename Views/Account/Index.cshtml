@@ -9,17 +9,17 @@
     <div class="title">Platen</div>
     <table>
         <thead>
-                <th>Title</th>
-                <th>Prijs</th>
+        <th>Title</th>
+        <th>Prijs</th>
         </thead>
         <tbody>
-             @foreach (Product product in ViewBag.purchasableProducts)
-             {
-                 <tr>
-                     <td>@product.Record.Title</td>
-                     <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
-                 </tr>
-             }
+        @foreach (Product product in ViewBag.purchasableProducts)
+        {
+            <tr>
+                <td>@product.Record.Title</td>
+                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+            </tr>
+        }
         </tbody>
     </table>
 </section>
@@ -27,17 +27,17 @@
     <div class="title">Verkochte platen</div>
     <table>
         <thead>
-                <th>Title</th>
-                <th>Prijs</th>
+        <th>Title</th>
+        <th>Prijs</th>
         </thead>
         <tbody>
-             @foreach (Product product in ViewBag.soldProducts)
-             {
-                 <tr>
-                     <td>@product.Record.Title</td>
-                     <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
-                 </tr>
-             }
+        @foreach (Product product in ViewBag.soldProducts)
+        {
+            <tr>
+                <td>@product.Record.Title</td>
+                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+            </tr>
+        }
         </tbody>
     </table>
 </section>

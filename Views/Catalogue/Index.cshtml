@@ -6,14 +6,18 @@
 
 <section class="card-items">
     <div class="cards">
-         @foreach (Record record in ViewBag.records)
-         {
-             @await Html.PartialAsync("_RecordCard", record)
-         }
+        @foreach (Record record in ViewBag.records)
+        {
+            @await Html.PartialAsync("_RecordCard", record)
+        }
     </div>
 </section>
 <section class="pagination">
-    <div class="previous"><i class="fas fa-arrow-left"></i></div>
+    <div class="previous">
+        <i class="fas fa-arrow-left"></i>
+    </div>
     <div class="current">1</div>
-    <div class="next"><i class="fas fa-arrow-right"></i></div>
+    <div class="next">
+        <i class="fas fa-arrow-right"></i>
+    </div>
 </section>
