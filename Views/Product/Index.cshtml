@@ -1,4 +1,5 @@
 @using System.Globalization
+@using Web_Development.Models
 @{
     Layout = "Layout";
     ViewData["Title"] = "Product";
@@ -30,11 +31,11 @@
                             </tr>
                             <tr class="row">
                                 <th>Vinyl kwaliteit</th>
-                                <td>@product.PlateCondition</td>
+                                <td>@Extensions.GetDisplayName(product.PlateCondition)</td>
                             </tr>
                             <tr class="row">
                                 <th>Sleeve kwaliteit</th>
-                                <td>@product.SleeveCondition</td>
+                                <td>@Extensions.GetDisplayName(product.SleeveCondition)</td>
                             </tr>
                             <tr class="row">
                                 <th>Aangeboden door</th>
