@@ -8,14 +8,25 @@
     <form method="post" action="@Url.Action("Register")">
         <section class="boxes">
             <div class="box">
-                <input required type="text" name="Name" placeholder="Naam">
-                <input required type="text" name="Email" placeholder="Email">
-                <input required type="password" name="Password" placeholder="Wachtwoord">
+                
+                <span class="error">@(TempData["error_for_name"] ?? "")</span>
+                <input required type="text" name="Name" asp-for="CreateNewUser.Name" placeholder="Naam">
+
+                <span class="error">@(TempData["error_for_email"] ?? "")</span>
+                <input required type="text" name="Email" asp-for="CreateNewUser.Email" placeholder="Email">
+
+               <span class="error">@(TempData["error_for_password"] ?? "")</span>
+                <input required type="password" name="Password" asp-for="CreateNewUser.Password" placeholder="Wachtwoord">
             </div>
             <div class="box">
-                <input required type="text" name="Address" placeholder="Adres">
-                <input required type="text" name="PostalCode" placeholder="Postcode">
-                <input required type="text" name="Country" placeholder="Land">
+                <span class="error">@(TempData["error_for_address"] ?? "")</span>
+                <input required type="text" name="Address" asp-for="CreateNewUser.Address" placeholder="Adres">
+                
+                <span class="error">@(TempData["error_for_postCode"] ?? "")</span>
+                <input required type="text" name="PostalCode" asp-for="CreateNewUser.PostCode" placeholder="Postcode">
+                
+                <span class="error">@(TempData["error_for_country"] ?? "")</span>
+                <input required type="text" name="Country" asp-for="CreateNewUser.Country" placeholder="Land">
             </div>
         </section>
         <button type="submit">Aanmelden</button>
