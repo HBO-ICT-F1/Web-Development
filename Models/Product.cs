@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Web_Development.Models
 {
@@ -29,6 +31,7 @@ namespace Web_Development.Models
         [ForeignKey("UserId")] public virtual User User { get; set; }
     }
 
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public enum Condition
     {
         Fair,
@@ -42,23 +45,9 @@ namespace Web_Development.Models
     public static class Extensions
     {
         /// <summary>
-        ///     Gets the abbreviation used for describing a condition
+        ///     A list of abbreviations for all conditions
         /// </summary>
-        /// <param name="condition">The condition to get the abbreviation for</param>
-        /// <returns>The abbreviation, or null if not found</returns>
-        public static string GetAbbreviation(this Condition condition)
-        {
-            return condition switch
-            {
-                Condition.Fair => "F",
-                Condition.Good => "G",
-                Condition.VeryGood => "VG",
-                Condition.VeryGoodPlus => "VG+",
-                Condition.NearMint => "NM or M-",
-                Condition.Mint => "M",
-                _ => null
-            };
-        }
+        private static List<string> Abbreviations { get; } = new() {"F", "G", "VG", "VG+", "NM or M-", "M"};
 
         /// <summary>
         ///     Gets the name used for displaying a condition
@@ -77,13 +66,29 @@ namespace Web_Development.Models
         }
 
         /// <summary>
+        ///     Parses the specified input to a condition
+        /// </summary>
+        /// <param name="input">The input to parse</param>
+        /// <returns>The parsed condition, or null if not found</returns>
+        public static Condition? Parse(string input)
+        {
+            for (var i = 0; i < Abbreviations.Count; i++)
+            {
+                if (!input.Equals(Abbreviations[i], StringComparison.OrdinalIgnoreCase)) continue;
+                return (Condition) i;
+            }
+
+            return null;
+        }
+
+        /// <summary>
         ///     Gets the text displayed when showing a condition
         /// </summary>
         /// <param name="condition">The condition to get the displayed text for</param>
         /// <returns>The text to display</returns>
         public static string GetDisplayName(this Condition condition)
         {
-            return $"{GetName(condition)} ({GetAbbreviation(condition)})";
+            return $"{GetName(condition)} ({Abbreviations[(int) condition]})";
         }
     }
 }
