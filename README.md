@@ -1,6 +1,6 @@
 ## Web development
 This is our web-development project in C# using [ASP.NET](https://dotnet.microsoft.com/apps/aspnet). <br>
-The website is a marketplace for selling music plates.
+The website is a marketplace for selling music records.
 
 ### NuGet packages
 This project uses the following NuGet packages:
@@ -8,6 +8,7 @@ This project uses the following NuGet packages:
 - [BCrypt.NET-Next](https://www.nuget.org/packages/BCrypt.Net-Next).
 - [EntityFramework](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore).
 - [MySQL](https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql).
+- [Json](https://www.nuget.org/packages/Newtonsoft.Json).
 
 ### Setup
 To set up the project, follow the instructions below:
