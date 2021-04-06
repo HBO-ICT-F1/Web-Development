@@ -23,7 +23,7 @@
                 <input required type="text" name="Address" asp-for="CreateNewUser.Address" placeholder="Adres">
                 
                 <span class="error">@(TempData["error_for_postCode"] ?? "")</span>
-                <input required type="text" name="PostalCode" asp-for="CreateNewUser.PostCode" placeholder="Postcode">
+                <input required type="text" name="PostCode" asp-for="CreateNewUser.PostCode" placeholder="PostCode">
                 
                 <span class="error">@(TempData["error_for_country"] ?? "")</span>
                 <input required type="text" name="Country" asp-for="CreateNewUser.Country" placeholder="Land">

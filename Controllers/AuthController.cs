@@ -118,6 +118,7 @@ namespace Web_Development.Controllers
             public string Password { get; set; }
             [Required(ErrorMessage = "Je moet een adress opgeven!"), MinLength(4, ErrorMessage = "Je moet een adress opgeven!")]
             public string Address { get; set; }
+            
             [Required(ErrorMessage = "Je moet een postcode opgeven!"), MinLength(4, ErrorMessage = "Dit is geen geldige postcode")]
             public string PostCode { get; set; }
             [Required(ErrorMessage = "Je moet een land opgeven!"), MinLength(3, ErrorMessage = "Dit is geen geldig land!")]
