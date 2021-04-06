@@ -98,7 +98,7 @@ namespace Web_Development.Controllers
                 PostalCode = CreateNewUser.PostCode,
                 Country = CreateNewUser.Country,
                 Role = 0,
-                CreatedAt = DateTime.Today
+                CreatedAt = DateTime.Now
             };
             _database.Add(user);
             _database.SaveChanges();

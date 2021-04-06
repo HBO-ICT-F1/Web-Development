@@ -33,6 +33,7 @@ namespace Web_Development.Controllers
             ViewBag.soldProducts = _database.Products
                 .Include(product => product.Record)
                 .Include(product => product.Sale)
+                .Include(product => product.Sale.User)
                 .Where(product => product.Sale != null)
                 .Where(product => product.UserId == user.Id)
                 .OrderByDescending(product => product.Id);

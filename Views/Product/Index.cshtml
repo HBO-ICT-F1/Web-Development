@@ -46,9 +46,9 @@
                                 <td>@product.CreatedAt</td>
                             </tr>
                         </table>
-                        @if (ViewBag.user != null)
+                        @if (ViewBag.user != null && product.User.Id != ViewBag.user.Id)
                         {
-                            <a href="#" class="purchase">kopen</a>
+                            <a href="@Url.Action("Purchase", new {recordId = product.RecordId, productId = product.Id})" class="purchase">kopen</a>
                         }
                     </div>
                 }
