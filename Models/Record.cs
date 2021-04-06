@@ -15,7 +15,7 @@ namespace Web_Development.Models
 
         [Required] public short Year { get; set; }
 
-        public int CatalogNumber { get; set; }
+        public string CatalogNumber { get; set; }
 
         [DataType(DataType.DateTime)]
         [Required]

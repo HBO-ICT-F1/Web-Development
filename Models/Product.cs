@@ -16,6 +16,10 @@ namespace Web_Development.Models
 
         [Required] public double Price { get; set; }
 
+        [Required] public string Format { get; set; }
+
+        [Required] public string Label { get; set; }
+
         [Required] public bool ForSale { get; set; }
 
         [Required] public Condition PlateCondition { get; set; }
