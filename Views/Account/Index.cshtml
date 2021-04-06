@@ -11,13 +11,24 @@
         <thead>
         <th>Title</th>
         <th>Prijs</th>
+        <th></th>
         </thead>
         <tbody>
-        @foreach (Product product in ViewBag.purchasableProducts)
+        @foreach (Product product in ViewBag.products)
         {
             <tr>
                 <td>@product.Record.Title</td>
                 <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
+                <td><a href="@Url.Action("ForSaleChange", new {productId = product.Id, forSale = product.ForSale})">
+                    @if (product.ForSale)
+                    {
+                        <i class="fas fa-times"></i>
+                    }
+                    else
+                    {
+                        <i class="fas fa-check"></i>
+                    }
+                </a></td>
             </tr>
         }
         </tbody>

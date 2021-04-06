@@ -33,6 +33,8 @@ namespace Web_Development.Models
         [ForeignKey("RecordId")] public virtual Record Record { get; set; }
 
         [ForeignKey("UserId")] public virtual User User { get; set; }
+
+        public virtual Sale Sale { get; set; }
     }
 
     [SuppressMessage("ReSharper", "UnusedMember.Global")]

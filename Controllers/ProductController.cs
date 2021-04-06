@@ -23,7 +23,7 @@ namespace Web_Development.Controllers
             ViewBag.record = _database.Records.FirstOrDefault(record => record.Id == recordId);
             ViewBag.products = _database.Products
                 .Include(product => product.User)
-                .Where(product => product.ForSale && product.RecordId == recordId)
+                .Where(product => product.ForSale && product.RecordId == recordId && product.Sale == null)
                 .OrderBy(product => product.Price );
             return View("Index");
         }

@@ -680,8 +680,8 @@ section.sold-records table td {
 section.sold-records .title {
     color: white;
   }
-  section.purchasable-records table,
-section.sold-records table {
+  section.purchasable-records table *,
+section.sold-records table * {
     color: white;
   }
   section.purchasable-records table thead tr,

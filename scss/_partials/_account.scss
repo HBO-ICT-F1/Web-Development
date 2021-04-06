@@ -115,7 +115,9 @@ section.sold-records {
     }
 
     table {
-      color: white;
+      * {
+        color: white;
+      }
 
       thead tr {
         background: #484848;

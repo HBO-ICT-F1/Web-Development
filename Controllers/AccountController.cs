@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,14 +23,18 @@ namespace Web_Development.Controllers
         [MiddlewareFilter(typeof(AuthMiddlewareConfig))]
         public IActionResult Index()
         {
-            ViewBag.purchasableProducts = _database.Products
+            ViewBag.products = _database.Products
                 .Include(product => product.Record)
-                .Where(product => product.ForSale)
+                .Include(product => product.Sale)
+                .Where(product => product.Sale == null)
+                .Where(product => product.UserId == user.Id)
                 .OrderByDescending(product => product.Id);
 
             ViewBag.soldProducts = _database.Products
                 .Include(product => product.Record)
-                .Where(product => !product.ForSale)
+                .Include(product => product.Sale)
+                .Where(product => product.Sale != null)
+                .Where(product => product.UserId == user.Id)
                 .OrderByDescending(product => product.Id);
             return View("Index");
         }
@@ -50,6 +55,20 @@ namespace Web_Development.Controllers
             _database.Users.Update(user);
             auth.Login(user);
             _database.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet("/account/forsale/{productId}/{forSale}")]
+        [MiddlewareFilter(typeof(AuthMiddlewareConfig))]
+        public IActionResult ForSaleChange(int productId, bool forSale)
+        {
+            var product = _database.Products.FirstOrDefault(p => p.Id == productId);
+            if (product != null)
+            {
+                product.ForSale = !forSale;
+                _database.Products.Update(product);
+                _database.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
     }
