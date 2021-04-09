@@ -31,11 +31,12 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
-section.product .image-cards,
+section.product,
+section.record .image-cards,
 nav.navbar,
-section.product .information,
-section.product .flex-row .records .record-box,
-section.product .flex-row .product-header,
+section.record .information,
+section.record .flex-row .records .record-box,
+section.record .flex-row .product-header,
 section.user-details,
 section.create-product,
 section.import-products,
@@ -60,6 +61,7 @@ footer {
 @import "_partials/show-more";
 @import "_partials/footer";
 @import "_partials/auth";
+@import "_partials/record";
 @import "_partials/product";
 @import "_partials/pagination";
 @import "_partials/account";
@@ -81,11 +83,12 @@ input[type=text], input[type=password] {
   section.show-more,
   section.auth-box,
   section.catalogue,
-  section.product .image-cards,
+  section.product,
+  section.record .image-cards,
   nav.navbar,
-  section.product .information,
-  section.product .flex-row .records .record-box,
-  section.product .flex-row .product-header,
+  section.record .information,
+  section.record .flex-row .records .record-box,
+  section.record .flex-row .product-header,
   section.user-details,
   section.create-product,
   section.import-products,

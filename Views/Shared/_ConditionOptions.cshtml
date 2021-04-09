@@ -1,0 +1,5 @@
+@using Web_Development.Models
+@foreach (var condition in Enum.GetNames(typeof(Condition)))
+{
+    <option value="">@Extensions.GetDisplayName((Condition) Enum.Parse(typeof(Condition), condition))</option>
+}

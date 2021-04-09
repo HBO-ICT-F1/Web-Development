@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="~/css/app.css"/>
 </head>
 <body>
-@Html.Partial("_Navbar")
+@await Html.PartialAsync("_Navbar")
 <div class="container">
     @RenderBody()
-    @Html.Partial("_Footer")
+    @await Html.PartialAsync("_Footer")
 </div>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

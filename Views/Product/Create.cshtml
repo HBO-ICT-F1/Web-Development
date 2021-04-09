@@ -1,0 +1,24 @@
+@{
+    Layout = "Layout";
+    ViewData["Title"] = "Product aanmaken";
+}
+
+<section class="product">
+    <div class="title">Product aanmaken</div>
+    <form method="post" action="@Url.Action("Create")">
+        <div class="input-box">
+            <input type="hidden" id="record" name="record" value="">
+            <input type="text" placeholder="Record">
+            <input type="text" name="price" placeholder="Prijs">
+            <select name="plate-condition">
+                @await Html.PartialAsync("_ConditionOptions")
+            </select>
+            <select name="sleeve-condition">
+                @await Html.PartialAsync("_ConditionOptions")
+            </select>
+            <input type="text" name="format" placeholder="Type">
+            <input type="text" name="label" placeholder="Label">
+        </div>
+        <button type="submit">Product aanmaken</button>
+    </form>
+</section>

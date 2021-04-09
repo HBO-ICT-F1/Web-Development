@@ -30,11 +30,12 @@ section.header,
 section.show-more,
 section.auth-box,
 section.catalogue,
-section.product .image-cards,
+section.product,
+section.record .image-cards,
 nav.navbar,
-section.product .information,
-section.product .flex-row .records .record-box,
-section.product .flex-row .product-header,
+section.record .information,
+section.record .flex-row .records .record-box,
+section.record .flex-row .product-header,
 section.user-details,
 section.create-product,
 section.import-products,
@@ -414,51 +415,51 @@ section.auth-box form .boxes .box:first-child {
   }
 }
 
-section.product {
+section.record {
   box-shadow: none;
   margin-bottom: 0;
   padding: 0;
   background: none;
 }
-section.product .title {
+section.record .title {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 15px;
 }
-section.product .flex-row {
+section.record .flex-row {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-section.product .flex-row .product-header {
+section.record .flex-row .product-header {
   padding: 0;
   margin-right: 20px;
   width: 100%;
   height: 250px;
 }
-section.product .flex-row .product-header iframe {
+section.record .flex-row .product-header iframe {
   height: 100%;
   width: 100%;
   border: 0;
 }
-section.product .flex-row .records {
+section.record .flex-row .records {
   width: 100%;
   min-width: 350px;
   height: 300px;
   overflow-x: auto;
   margin-bottom: 20px;
 }
-section.product .flex-row .records .record-box {
+section.record .flex-row .records .record-box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-section.product .flex-row .records .record-box table .row {
+section.record .flex-row .records .record-box table .row {
   text-align: left;
 }
-section.product .flex-row .records .record-box .purchase {
+section.record .flex-row .records .record-box .purchase {
   margin-top: 20px;
   color: white;
   background: black;
@@ -466,99 +467,99 @@ section.product .flex-row .records .record-box .purchase {
   border-radius: 5px;
 }
 @media (prefers-color-scheme: dark) {
-  section.product .title {
+  section.record .title {
     color: white;
   }
-  section.product .flex-row .records .record-box table {
+  section.record .flex-row .records .record-box table {
     color: white;
   }
-  section.product .information {
+  section.record .information {
     color: white;
   }
 }
-section.product .image-cards {
+section.record .image-cards {
   display: flex;
   flex-direction: column;
   padding: 0;
 }
-section.product .image-cards .image-card {
+section.record .image-cards .image-card {
   height: 270px;
   width: 100%;
   padding: 20px;
 }
-section.product .image-cards .image-card .image {
+section.record .image-cards .image-card .image {
   height: 100%;
   width: 100%;
   background-size: cover;
 }
-section.product .information .title {
+section.record .information .title {
   font-size: 25px;
 }
-section.product .information table {
+section.record .information table {
   width: 100%;
 }
-section.product .information table th {
+section.record .information table th {
   text-align: left;
 }
 @media only screen and (min-width: 480px) {
-  section.product .flex-row .product-header {
+  section.record .flex-row .product-header {
     height: 350px;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 350px;
   }
 }
 @media only screen and (min-width: 576px) {
-  section.product .flex-row .product-header {
+  section.record .flex-row .product-header {
     height: 350px;
   }
-  section.product .image-cards {
+  section.record .image-cards {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 200px;
     width: 50%;
   }
 }
 @media only screen and (min-width: 768px) {
-  section.product .flex-row {
+  section.record .flex-row {
     flex-direction: row;
   }
-  section.product .flex-row .records {
+  section.record .flex-row .records {
     width: max-content;
   }
-  section.product .flex-row .product-header {
+  section.record .flex-row .product-header {
     height: 250px;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 250px;
     width: 50%;
   }
 }
 @media only screen and (min-width: 992px) {
-  section.product .flex-row .product-header, section.product .flex-row .records {
+  section.record .flex-row .product-header, section.record .flex-row .records {
     height: 350px;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 300px;
     width: 50%;
   }
 }
 @media only screen and (min-width: 1200px) {
-  section.product .flex-row .product-header, section.product .flex-row .records {
+  section.record .flex-row .product-header, section.record .flex-row .records {
     height: 450px;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 200px;
     width: 25%;
   }
 }
 @media only screen and (min-width: 1400px) {
-  section.product .flex-row .product-header, section.product .flex-row .records {
+  section.record .flex-row .product-header, section.record .flex-row .records {
     height: 500px;
   }
-  section.product .image-cards .image-card {
+  section.record .image-cards .image-card {
     height: 250px;
     width: 25%;
   }
@@ -698,6 +699,13 @@ section.sold-records table th,
 section.sold-records table td {
   padding: 5px;
 }
+section.purchasable-records table th i.fas, section.purchasable-records table th i.fa, section.purchasable-records table td i.fas, section.purchasable-records table td i.fa,
+section.sold-records table th i.fas,
+section.sold-records table th i.fa,
+section.sold-records table td i.fas,
+section.sold-records table td i.fa {
+  margin: 0 3px;
+}
 
 @media (prefers-color-scheme: dark) {
   .account section.user-details table {
@@ -775,11 +783,12 @@ input[type=text], input[type=password] {
 section.show-more,
 section.auth-box,
 section.catalogue,
-section.product .image-cards,
+section.product,
+section.record .image-cards,
 nav.navbar,
-section.product .information,
-section.product .flex-row .records .record-box,
-section.product .flex-row .product-header,
+section.record .information,
+section.record .flex-row .records .record-box,
+section.record .flex-row .product-header,
 section.user-details,
 section.create-product,
 section.import-products,

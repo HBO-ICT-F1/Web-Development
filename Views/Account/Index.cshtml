@@ -21,16 +21,14 @@
                 <td>@product.Record.Title</td>
                 <td>@product.Record.Artist</td>
                 <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
-                <td><a href="@Url.Action("ForSaleChange", new {productId = product.Id, forSale = product.ForSale})">
-                    @if (product.ForSale)
-                    {
-                        <i class="fas fa-times"></i>
-                    }
-                    else
-                    {
-                        <i class="fas fa-check"></i>
-                    }
-                </a></td>
+                <td>
+                    <a href="@Url.Action("Update", "Product", new {productId = product.Id})">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a href="@Url.Action("ForSaleChange", new {productId = product.Id, forSale = product.ForSale})">
+                        @Html.Raw(product.ForSale ? @"<i class='fas fa-times'></i>" : @"<i class='fas fa-check'></i>")
+                    </a>
+                </td>
             </tr>
         }
         </tbody>
@@ -102,7 +100,7 @@
     <section class="create-product">
         <div class="title">Product aanmaken</div>
         <div class="center-box vertical-align">
-            <a class="btn" href="#">Ga naar product aanmaak pagina</a>
+            <a class="btn" href="@Url.Action("Add", "Product")">Ga naar product aanmaak pagina</a>
         </div>
     </section>
     <section class="import-products">
