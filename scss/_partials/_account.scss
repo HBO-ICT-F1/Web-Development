@@ -1,11 +1,10 @@
 .account {
   section.user-details {
-    margin-right: 20px;
     width: 100%;
-    
+
     table {
       width: 100%;
-      
+
       tr th {
         text-align: left;
         user-select: none;
@@ -15,18 +14,18 @@
 
   section.change-password {
     width: 100%;
-    
+
     form {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       span.error {
         margin-bottom: 8px;
         color: red;
       }
-      
+
       .input-box {
         display: flex;
         flex-direction: column;
@@ -36,27 +35,51 @@
           width: 100%;
         }
       }
+    }
+  }
 
-      button {
-        background: black;
-        color: white;
-        border: 0;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 20px;
-        margin-bottom: 15px;
-      }
+  section.create-product,
+  section.import-products{    
+    .center-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .vertical-align {
+      height: calc(100% - 45px);
+      justify-content: center;
     }
   }
 
   section.user-details,
-  section.change-password {
+  section.change-password,
+  section.create-product,
+  section.import-products {
     .title {
       font-size: 25px;
       margin-bottom: 15px;
       text-align: center;
       user-select: none;
+    }
+
+    button, a.btn {
+      background: black;
+      color: white;
+      border: 0;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      width: max-content;
+    }
+    
+    input[type=file] {
+      padding: 10px;
+      border-radius: 5px;
+      background: #484848;
+      color: white;
     }
   }
 }
@@ -98,9 +121,11 @@ section.sold-records {
         color: white;
       }
     }
-    
+
     section.user-details,
-    section.change-password {
+    section.change-password,
+    section.create-product,
+    section.import-products {
       .title {
         color: white;
         text-align: center;
@@ -129,7 +154,23 @@ section.sold-records {
 @media only screen and (min-width: 768px) {
   .account {
     display: flex;
+    flex-wrap: wrap;
+
+    section.user-details, 
+    section.change-password,
+    section.create-product,
+    section.import-products {
+      width: calc(50% - 10px);
+    }
     
+    section.user-details, section.create-product {
+      margin-right: 10px;
+    }
+    
+    section.change-password, section.import-products {
+      margin-left: 10px;
+    }
+
     section.change-password {
       form {
         .input-box {
