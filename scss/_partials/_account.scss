@@ -78,8 +78,8 @@
     input[type=file] {
       padding: 10px;
       border-radius: 5px;
-      background: #484848;
-      color: white;
+      background: #d6d6d6;
+      color: black;
     }
   }
 }
@@ -129,6 +129,11 @@ section.sold-records {
       .title {
         color: white;
         text-align: center;
+      }
+
+      input[type=file] {
+        background: #484848;
+        color: white;
       }
     }
   }

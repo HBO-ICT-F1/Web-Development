@@ -666,8 +666,8 @@ section.pagination .next, section.pagination .previous {
 .account section.import-products input[type=file] {
   padding: 10px;
   border-radius: 5px;
-  background: #484848;
-  color: white;
+  background: #d6d6d6;
+  color: black;
 }
 
 section.purchasable-records .title,
@@ -707,6 +707,13 @@ section.sold-records table td {
 .account section.import-products .title {
     color: white;
     text-align: center;
+  }
+  .account section.user-details input[type=file],
+.account section.change-password input[type=file],
+.account section.create-product input[type=file],
+.account section.import-products input[type=file] {
+    background: #484848;
+    color: white;
   }
 
   section.purchasable-records .title,
