@@ -23,7 +23,6 @@
 
       span.error {
         margin-bottom: 8px;
-        color: red;
       }
 
       .input-box {
@@ -73,6 +72,7 @@
       margin-bottom: 15px;
       font-size: 13px;
       width: max-content;
+      user-select: none;
     }
     
     input[type=file] {

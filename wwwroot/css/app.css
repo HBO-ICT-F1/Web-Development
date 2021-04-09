@@ -20,6 +20,11 @@ footer {
   margin-top: 80px;
 }
 
+span.error {
+  color: red !important;
+  font-size: 13px !important;
+}
+
 section.header,
 .card-items,
 section.show-more,
@@ -360,9 +365,6 @@ section.auth-box span {
   margin-bottom: 7px;
   user-select: none;
 }
-section.auth-box span.error {
-  color: red;
-}
 section.auth-box a {
   background: gray;
   color: white;
@@ -612,7 +614,6 @@ section.pagination .next, section.pagination .previous {
 }
 .account section.change-password form span.error {
   margin-bottom: 8px;
-  color: red;
 }
 .account section.change-password form .input-box {
   display: flex;
@@ -659,6 +660,7 @@ section.pagination .next, section.pagination .previous {
   margin-bottom: 15px;
   font-size: 13px;
   width: max-content;
+  user-select: none;
 }
 .account section.user-details input[type=file],
 .account section.change-password input[type=file],

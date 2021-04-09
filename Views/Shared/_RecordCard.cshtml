@@ -1,6 +1,6 @@
 @model Web_Development.Models.Record
 <div class="record-card">
-    <a href="@Url.Action("Index", "Product", new {RecordId = Model.Id})">
+    <a href="@Url.Action("Index", "Record", new {RecordId = Model.Id})">
         @{
             var youtubeUrl = "";
             if (!string.IsNullOrEmpty(Model.YoutubeToken))

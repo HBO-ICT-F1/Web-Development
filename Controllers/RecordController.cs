@@ -9,11 +9,11 @@ using Web_Development.Utils;
 
 namespace Web_Development.Controllers
 {
-    public class ProductController : BaseController
+    public class RecordController : BaseController
     {
         private readonly Database _database;
 
-        public ProductController(Database database, IHttpContextAccessor httpContextAccessor)
+        public RecordController(Database database, IHttpContextAccessor httpContextAccessor)
             : base(httpContextAccessor)
         {
             _database = database;
@@ -49,6 +49,5 @@ namespace Web_Development.Controllers
             _database.SaveChanges();
             return RedirectToAction("Index", new {RecordId = recordId});
         }
-        
     }
 }
