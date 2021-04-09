@@ -565,6 +565,52 @@ section.record .information table th {
   }
 }
 
+section.product .title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  user-select: none;
+  width: 100%;
+}
+section.product form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section.product form .input-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.product form .input-box input[type=text], section.product form .input-box select {
+  width: 100%;
+}
+section.product form button {
+  background: black;
+  color: white;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+@media (prefers-color-scheme: dark) {
+  section.product .title {
+    color: white;
+  }
+}
+@media only screen and (min-width: 768px) {
+  section.product form .input-box input[type=text], section.product form .input-box select {
+    width: 50%;
+  }
+  section.product form .input-box *:nth-child(2n+2) {
+    width: calc(50% - 10px) !important;
+    margin-right: 10px;
+  }
+}
+
 section.pagination {
   display: flex;
   justify-content: center;
@@ -766,7 +812,7 @@ section.sold-records table thead tr {
     margin-right: 0;
   }
 }
-input[type=text], input[type=password] {
+input[type=text], input[type=password], select {
   border: 1px solid black;
   margin-bottom: 10px;
   padding: 10px 20px;
@@ -800,7 +846,7 @@ footer {
     background: #2d2d2d;
   }
 
-  input[type=text], input[type=password] {
+  input[type=text], input[type=password], select {
     background: #1c1c1c;
     color: white;
   }
