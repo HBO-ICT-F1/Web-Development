@@ -16,6 +16,7 @@ namespace Web_Development.Utils
         private const string ApiKey = "";
 
         /// <summary>
+        ///     Endpoint used for requesting videos from the Youtube api
         /// </summary>
         private static readonly string BaseUrl =
             $"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=1&key={ApiKey}";
