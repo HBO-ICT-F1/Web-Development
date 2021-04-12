@@ -8,7 +8,6 @@
     <form method="post" action="@Url.Action("Register")">
         <section class="boxes">
             <div class="box">
-                
                 <span class="error">@(TempData["error_for_name"] ?? "")</span>
                 <input required type="text" name="Name" asp-for="CreateNewUser.Name" placeholder="Naam">
 

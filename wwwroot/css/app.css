@@ -583,7 +583,14 @@ section.product form .input-box {
   display: flex;
   flex-wrap: wrap;
 }
+section.product form .input-box label.error {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 section.product form .input-box input[type=text], section.product form .input-box select {
+  height: 37.33px;
   width: 100%;
 }
 section.product form button {
@@ -596,18 +603,34 @@ section.product form button {
   margin-top: 20px;
   margin-bottom: 15px;
 }
+section.product #record-box {
+  position: absolute;
+  background: #d6d6d6;
+  display: none;
+  padding: 10px;
+}
+section.product #record-box .row:not(:last-child) {
+  margin-bottom: 5px;
+}
 @media (prefers-color-scheme: dark) {
   section.product .title {
     color: white;
   }
+  section.product #record-box {
+    background: #484848;
+    color: white;
+  }
 }
 @media only screen and (min-width: 768px) {
-  section.product form .input-box input[type=text], section.product form .input-box select {
+  section.product form .input-box input[type=text], section.product form .input-box select, section.product form .input-box label.error {
     width: 50%;
   }
-  section.product form .input-box *:nth-child(2n+2) {
+  section.product form .input-box input[type=text]:nth-child(2n+2), section.product form .input-box select:nth-child(2n+2), section.product form .input-box label.error:nth-child(2n+2) {
     width: calc(50% - 10px) !important;
     margin-right: 10px;
+  }
+  section.product form .input-box label.error input[type=text], section.product form .input-box label.error select {
+    width: 100% !important;
   }
 }
 

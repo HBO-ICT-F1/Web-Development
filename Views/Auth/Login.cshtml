@@ -6,10 +6,7 @@
 <section class="auth-box">
     <span class="title">Login</span>
     <form method="post" action="@Url.Action("Login")">
-        
         <span class="error">@(TempData["error"] ?? "")</span>
-        
-        
         <input required type="text" name="Email" placeholder="Email">
         <input required type="password" name="Password" placeholder="Wachtwoord">
         <button type="submit">Inloggen</button>

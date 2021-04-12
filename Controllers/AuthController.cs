@@ -13,15 +13,15 @@ namespace Web_Development.Controllers
     public class AuthController : BaseController
     {
         private readonly Database _database;
+        
+        [BindProperty] 
+        public NewUser CreateNewUser { get; set; }
 
         public AuthController(Database database, IHttpContextAccessor httpContextAccessor)
             : base(httpContextAccessor)
         {
             _database = database;
         }
-
-        [BindProperty] public NewUser CreateNewUser { get; set; }
-
 
         [HttpGet("/login")]
         public IActionResult Login()

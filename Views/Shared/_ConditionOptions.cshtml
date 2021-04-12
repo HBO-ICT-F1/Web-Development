@@ -1,5 +1,6 @@
 @using Web_Development.Models
+<option value="">-- selecteer@(TempData["select_title"] != null ? $" een {TempData["select_title"]}" : "") --</option>
 @foreach (var condition in Enum.GetNames(typeof(Condition)))
 {
-    <option value="">@Extensions.GetDisplayName((Condition) Enum.Parse(typeof(Condition), condition))</option>
+    <option value="@condition"@Html.Raw(Convert.ToString(TempData["selected"]) == condition ? " selected" : "")>@Extensions.GetDisplayName((Condition) Enum.Parse(typeof(Condition), condition))</option>
 }

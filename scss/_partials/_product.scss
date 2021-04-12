@@ -17,8 +17,16 @@ section.product {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      
+      label.error {
+        color: red;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
 
       input[type=text], select {
+        height: 37.33px;
         width: 100%;
       }
     }
@@ -34,9 +42,25 @@ section.product {
       margin-bottom: 15px;
     }
   }
+  
+  #record-box {
+    position: absolute;
+    background: #d6d6d6;
+    display: none;
+    padding: 10px;
+    
+    .row:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
 
   @media (prefers-color-scheme: dark) {
     .title {
+      color: white;
+    }
+    
+    #record-box {
+      background: #484848;
       color: white;
     }
   }
@@ -44,13 +68,17 @@ section.product {
   @media only screen and (min-width: 768px) {
     form {
       .input-box {
-        input[type=text], select {
+        input[type=text], select, label.error {
           width: 50%;
         }
 
-        *:nth-child(2n+2) {
+        input[type=text]:nth-child(2n+2), select:nth-child(2n+2), label.error:nth-child(2n+2) {
           width: calc(50% - 10px) !important;
           margin-right: 10px;
+        }
+
+        label.error input[type=text], label.error select {
+          width: 100% !important;
         }
       }
     }

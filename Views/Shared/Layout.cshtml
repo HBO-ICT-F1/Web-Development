@@ -18,6 +18,7 @@
 @* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script> *@
 <script src="~/js/app.js" asp-append-version="true"></script>
 
+@Html.Raw(ViewData["script"] != null ? $"<script src='{ViewData["script"]}'></script>" :  "")
 @await RenderSectionAsync("Scripts", false)
 </body>
 </html>
