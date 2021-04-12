@@ -105,8 +105,8 @@
     </section>
     <section class="import-products">
         <div class="title">Import producten</div>
-        <form class="center-box" method="post" action="@Url.Action("Import", "Import")">
-            <input type="file">
+        <form class="center-box" enctype="multipart/form-data" method="post" action="@Url.Action("Import", "Import")">
+            <input name="file" type="file" accept=".csv" required>
             <button type="submit">Producten importeren</button>
         </form>
     </section>
