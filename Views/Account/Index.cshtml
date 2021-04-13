@@ -25,6 +25,9 @@
                     <a href="@Url.Action("Update", "Product", new {productId = product.Id})">
                         <i class="fas fa-edit"></i>
                     </a>
+                    <a href="#">
+                        <i class="fas fa-trash"></i>
+                    </a>
                     <a href="@Url.Action("ForSaleChange", new {productId = product.Id, forSale = product.ForSale})">
                         @Html.Raw(product.ForSale ? @"<i class='fas fa-times'></i>" : @"<i class='fas fa-check'></i>")
                     </a>
@@ -51,6 +54,26 @@
                 <td>@product.Record.Artist</td>
                 <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
                 <td>@product.Sale.User.Name</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</section>
+<section class="sold-records">
+    <div class="title">Gekochte platen</div>
+    <table>
+        <thead>
+        <th>Title</th>
+        <th>Artiest</th>
+        <th>Prijs</th>
+        </thead>
+        <tbody>
+        @foreach (Product product in ViewBag.ownedProducts)
+        {
+            <tr>
+                <td>@product.Record.Title</td>
+                <td>@product.Record.Artist</td>
+                <td>@product.Price.ToString("C", new CultureInfo("nl-NL"))</td>
             </tr>
         }
         </tbody>

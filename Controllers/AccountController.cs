@@ -37,6 +37,13 @@ namespace Web_Development.Controllers
                 .Where(product => product.Sale != null)
                 .Where(product => product.UserId == user.Id)
                 .OrderByDescending(product => product.Id);
+
+            ViewBag.ownedProducts = _database.Products
+                .Include(product => product.Record)
+                .Include(product => product.Sale)
+                .Include(product => product.Sale.User)
+                .Where(product => product.Sale.User.Id == user.Id)
+                .OrderByDescending(product => product.Id);
             return View("Index");
         }
 
