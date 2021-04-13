@@ -742,6 +742,12 @@ section.pagination .next, section.pagination .previous {
   color: black;
 }
 
+section.purchasable-records,
+section.sold-records {
+  max-height: 300px;
+  overflow: auto;
+}
+
 section.purchasable-records .title,
 section.sold-records .title {
   font-size: 25px;
